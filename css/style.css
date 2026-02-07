@@ -1,0 +1,22 @@
+body {
+    background-color: slategray;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
+button {}
+
+.user-input{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.unifrakturmaguntia-regular {
+    font-family: "UnifrakturMaguntia", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
