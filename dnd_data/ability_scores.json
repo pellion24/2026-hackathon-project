@@ -1,0 +1,56 @@
+[
+  {
+    "type": "ability_score",
+    "name": "Strength",
+    "abbreviation": "STR",
+    "description": "Physical power, athletic ability, and raw force. In personality mapping, represents forcefulness, physical presence, and willingness to use direct power.",
+    "high_score_traits": ["physically imposing or active", "direct approach to problems", "intimidating presence", "gravitates toward physical solutions", "protective instinct", "endurance under hardship"],
+    "low_score_traits": ["physically slight or sedentary", "avoids confrontation", "relies on others for physical tasks", "prefers intellectual or social solutions"],
+    "real_world_indicators": ["athletic background", "physically demanding hobbies", "manual labor history", "imposing physical presence", "enjoys physical challenges"]
+  },
+  {
+    "type": "ability_score",
+    "name": "Dexterity",
+    "abbreviation": "DEX",
+    "description": "Agility, reflexes, and fine motor skills. In personality mapping, represents quick thinking, adaptability, and grace under pressure.",
+    "high_score_traits": ["quick reflexes mentally and physically", "graceful and precise", "good at improvisation", "dodges problems rather than confronting them head-on", "nimble thinker", "good timing"],
+    "low_score_traits": ["clumsy or awkward", "slow to react", "prefers planned over improvised action", "blunt approach"],
+    "real_world_indicators": ["plays sports requiring agility", "quick wit", "good at thinking on their feet", "skilled with hands", "multitasker"]
+  },
+  {
+    "type": "ability_score",
+    "name": "Constitution",
+    "abbreviation": "CON",
+    "description": "Endurance, stamina, and vital force. In personality mapping, represents resilience, perseverance, and ability to withstand hardship.",
+    "high_score_traits": ["resilient under pressure", "rarely gets sick or burnt out", "can work long hours", "emotionally durable", "perseveres through adversity", "high pain tolerance"],
+    "low_score_traits": ["burns out easily", "fragile health", "needs more recovery time", "vulnerable to stress"],
+    "real_world_indicators": ["works long hours without complaint", "bounces back from setbacks", "history of overcoming adversity", "endurance athlete", "reliable under sustained pressure"]
+  },
+  {
+    "type": "ability_score",
+    "name": "Intelligence",
+    "abbreviation": "INT",
+    "description": "Mental acuity, information recall, and analytical ability. In personality mapping, represents learning capacity, logical thinking, and knowledge acquisition.",
+    "high_score_traits": ["analytical thinker", "retains information easily", "logical approach", "enjoys learning", "sees patterns quickly", "strong academic background", "values data and evidence"],
+    "low_score_traits": ["learns through experience not study", "impatient with theory", "relies on intuition over analysis", "practical over theoretical"],
+    "real_world_indicators": ["advanced degrees", "reads extensively", "enjoys puzzles and strategy games", "data-driven decision maker", "strong memory for facts"]
+  },
+  {
+    "type": "ability_score",
+    "name": "Wisdom",
+    "abbreviation": "WIS",
+    "description": "Perception, insight, and judgment. In personality mapping, represents emotional intelligence, intuition, common sense, and the ability to read people and situations.",
+    "high_score_traits": ["perceptive and insightful", "good judge of character", "reads between the lines", "common sense", "patient", "aware of surroundings", "empathetic", "sees the bigger picture"],
+    "low_score_traits": ["oblivious to social cues", "poor judgment despite intelligence", "misses obvious signs", "naive or gullible", "book smart but not street smart"],
+    "real_world_indicators": ["people come to them for advice", "reads people well", "strong intuition", "experienced in human nature", "good clinical or diagnostic judgment"]
+  },
+  {
+    "type": "ability_score",
+    "name": "Charisma",
+    "abbreviation": "CHA",
+    "description": "Force of personality, social influence, and persuasiveness. In personality mapping, represents leadership, charm, intimidation, or any form of personal magnetism.",
+    "high_score_traits": ["magnetic personality", "persuasive speaker", "inspires or intimidates easily", "comfortable as center of attention", "natural leader", "emotionally expressive", "influences group dynamics"],
+    "low_score_traits": ["socially awkward", "struggles to persuade", "wallflower", "better one-on-one than in groups", "lets others take the lead socially"],
+    "real_world_indicators": ["effective public speaker", "natural leader in groups", "people gravitate toward them", "successful in sales or advocacy", "strong presence in a room"]
+  }
+]

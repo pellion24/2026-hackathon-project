@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head><title>D&D Agent</title></head>
+<body>
+  <h1>D&D Character Analyzer</h1>
+  <textarea id="description" rows="5" cols="50" placeholder="Describe a person..."></textarea>
+  <br>
+  <button id="submit">Analyze</button>
+  <pre id="result"></pre>
+
+  <script>
+    document.getElementById("submit").addEventListener("click", async () => {
+      const description = document.getElementById("description").value;
+      const resultBox = document.getElementById("result");
+      resultBox.textContent = "Thinking...";
+
+      const response = await fetch("/analyze", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ description })
+      });
+
+      const data = await response.json();
+      resultBox.textContent = data.character_sheet;
+    });
+  </script>
+</body>
+</html>

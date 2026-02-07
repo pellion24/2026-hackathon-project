@@ -1,0 +1,92 @@
+[
+  {
+    "type": "personality_traits",
+    "category": "Positive Traits",
+    "entries": [
+      {"trait": "I idolize a particular hero of my faith and constantly refer to that person's deeds and example.", "maps_to": ["devotion", "hero worship", "models behavior after someone admired"]},
+      {"trait": "I can find common ground between the fiercest enemies, empowering them to work together.", "maps_to": ["mediator", "diplomat", "peacemaker", "sees both sides"]},
+      {"trait": "I see omens in every event and action.", "maps_to": ["superstitious", "pattern-seeking", "reads meaning into coincidence"]},
+      {"trait": "Nothing can shake my optimistic attitude.", "maps_to": ["optimist", "resilient positivity", "refuses to give up hope"]},
+      {"trait": "I quote sacred texts and proverbs in almost every situation.", "maps_to": ["well-read", "references authority", "speaks in principles"]},
+      {"trait": "I am tolerant of other faiths and respect the worship of other gods.", "maps_to": ["open-minded", "tolerant", "respects differences"]},
+      {"trait": "I've enjoyed fine food, drink, and high society. Rough living grates on me.", "maps_to": ["refined tastes", "accustomed to comfort", "high standards"]},
+      {"trait": "I always have a plan for what to do when things go wrong.", "maps_to": ["planner", "contingency thinker", "prepared", "anxious but productive"]},
+      {"trait": "I am always calm, no matter what the situation. I never raise my voice or let my emotions control me.", "maps_to": ["stoic", "emotionally controlled", "calm under pressure"]},
+      {"trait": "I am incredibly slow to trust. Those who seem the fairest often have the most to hide.", "maps_to": ["skeptical", "guarded", "trust issues", "perceptive about deception"]},
+      {"trait": "I would rather make a new friend than a new enemy.", "maps_to": ["diplomatic", "conflict-averse", "social", "values relationships"]},
+      {"trait": "I'm driven by a wanderlust that led me away from home.", "maps_to": ["restless", "adventurous", "explorer", "cannot stay put"]},
+      {"trait": "I judge people by their actions, not their words.", "maps_to": ["action-oriented values", "skeptical of promises", "observant"]},
+      {"trait": "If someone is in trouble, I'm always ready to lend help.", "maps_to": ["helpful", "altruistic", "cannot ignore suffering"]},
+      {"trait": "When I set my mind to something, I follow through no matter what gets in my way.", "maps_to": ["determined", "stubborn", "perseverant", "single-minded"]}
+    ]
+  },
+  {
+    "type": "personality_traits",
+    "category": "Negative or Complex Traits",
+    "entries": [
+      {"trait": "I have a crude sense of humor.", "maps_to": ["irreverent", "inappropriate jokes", "uses humor as deflection"]},
+      {"trait": "I pocket anything I see that might have some value.", "maps_to": ["acquisitive", "opportunistic", "scarcity mindset"]},
+      {"trait": "I blow up at the slightest insult.", "maps_to": ["short temper", "easily offended", "pride-driven anger"]},
+      {"trait": "I turn tail and run when things look bad.", "maps_to": ["cowardly", "self-preserving", "pragmatic about survival"]},
+      {"trait": "I am dogmatic in my thoughts and philosophy.", "maps_to": ["rigid thinker", "inflexible", "ideologue"]},
+      {"trait": "I put too much trust in those who wield power within my institution.", "maps_to": ["authority-deferring", "institutionalist", "naive about power"]},
+      {"trait": "I'm convinced that people are always trying to steal my secrets.", "maps_to": ["paranoid", "secretive", "distrustful"]},
+      {"trait": "I speak without really thinking through my words, invariably insulting others.", "maps_to": ["blunt", "tactless", "unfiltered", "accidentally offensive"]}
+    ]
+  },
+  {
+    "type": "ideals",
+    "entries": [
+      {"ideal": "Faith", "description": "I trust that my deity will guide my actions. I have faith that if I work hard, things will go well.", "alignment": "Lawful", "maps_to": ["trusts process", "believes in higher order", "patient"]},
+      {"ideal": "Tradition", "description": "The ancient traditions of worship and sacrifice must be preserved and upheld.", "alignment": "Lawful", "maps_to": ["traditionalist", "conservative values", "respects precedent"]},
+      {"ideal": "Charity", "description": "I always try to help those in need, no matter what the personal cost.", "alignment": "Good", "maps_to": ["selfless", "generous", "compassionate to a fault"]},
+      {"ideal": "Change", "description": "We must help bring about the changes the gods are constantly working in the world.", "alignment": "Chaotic", "maps_to": ["progressive", "agent of change", "restless with status quo"]},
+      {"ideal": "Power", "description": "I hope to one day rise to the top of my faith's religious hierarchy.", "alignment": "Lawful", "maps_to": ["ambitious", "career-driven", "seeks status within systems"]},
+      {"ideal": "Knowledge", "description": "The path to power and self-improvement is through knowledge.", "alignment": "Neutral", "maps_to": ["lifelong learner", "values education", "intellectual"]},
+      {"ideal": "Freedom", "description": "Everyone should be free to pursue their own livelihood.", "alignment": "Chaotic", "maps_to": ["libertarian values", "anti-authoritarian", "values autonomy"]},
+      {"ideal": "Might", "description": "The strongest are meant to rule.", "alignment": "Evil", "maps_to": ["social Darwinist", "values strength", "hierarchy based on power"]},
+      {"ideal": "Honor", "description": "I don't steal from others in the trade.", "alignment": "Lawful", "maps_to": ["code of conduct", "professional ethics", "honor among peers"]},
+      {"ideal": "Fairness", "description": "I never target people who can't afford to lose a few coins.", "alignment": "Lawful", "maps_to": ["Robin Hood morality", "punches up not down", "selective ethics"]},
+      {"ideal": "Sincerity", "description": "There's no good pretending to be something I'm not.", "alignment": "Neutral", "maps_to": ["authentic", "honest", "values genuineness"]},
+      {"ideal": "Greater Good", "description": "My gifts are meant to be shared with all, not used for my own benefit.", "alignment": "Good", "maps_to": ["utilitarian", "service-oriented", "community-first"]},
+      {"ideal": "Logic", "description": "Emotions must not cloud our sense of what is right and true, or our logical thinking.", "alignment": "Lawful", "maps_to": ["rational", "suppresses emotion", "analytical decision-maker"]},
+      {"ideal": "Beauty", "description": "What is beautiful points us beyond itself toward what is true.", "alignment": "Good", "maps_to": ["aesthetic values", "finds meaning in art", "romantic worldview"]},
+      {"ideal": "Aspiration", "description": "I work hard to be the best there is at my craft.", "alignment": "Any", "maps_to": ["perfectionist", "driven", "competitive with self"]}
+    ]
+  },
+  {
+    "type": "bonds",
+    "entries": [
+      {"bond": "I would die to recover an ancient relic that was lost long ago.", "maps_to": ["obsessive about a goal", "values artifacts or legacy", "quest-driven"]},
+      {"bond": "I will someday get revenge on the corrupt power that destroyed my family.", "maps_to": ["revenge-motivated", "trauma-driven", "long memory for wrongs"]},
+      {"bond": "I owe my life to the priest who took me in when my parents died.", "maps_to": ["deep gratitude", "loyalty to mentor", "shaped by a single person's kindness"]},
+      {"bond": "Everything I do is for the common people.", "maps_to": ["populist", "serves the masses", "class consciousness"]},
+      {"bond": "I will do anything to protect the temple where I served.", "maps_to": ["institutional loyalty", "protective of home base", "defender of community"]},
+      {"bond": "I seek to preserve a work of art, or a sacred text, that holds great importance.", "maps_to": ["preservationist", "values heritage", "custodian of knowledge"]},
+      {"bond": "I'm trying to pay off an old debt I owe to a generous benefactor.", "maps_to": ["obligation-driven", "honorable debtor", "motivated by gratitude"]},
+      {"bond": "My tools are symbols of my past life, and I carry them so I never forget my roots.", "maps_to": ["sentimental about origins", "grounded by past", "values where they came from"]},
+      {"bond": "I protect those who cannot protect themselves.", "maps_to": ["guardian mentality", "protective instinct", "drawn to vulnerable populations"]},
+      {"bond": "My loyalty to my sovereign is unwavering.", "maps_to": ["devoted follower", "chain of command", "institutional loyalty"]},
+      {"bond": "Someone I loved died because of a mistake I made. That will never happen again.", "maps_to": ["guilt-driven", "overprotective", "haunted by past failure", "perfectionist from trauma"]}
+    ]
+  },
+  {
+    "type": "flaws",
+    "entries": [
+      {"flaw": "I judge others harshly, and myself even more severely.", "maps_to": ["perfectionist", "overly critical", "self-punishing", "high standards to a fault"]},
+      {"flaw": "I put too much trust in those who wield power within my institution.", "maps_to": ["naive about authority", "institutional blind spot", "deferential"]},
+      {"flaw": "My piety sometimes leads me to blindly trust those that profess faith in my god.", "maps_to": ["blind trust of in-group", "vulnerable to manipulation by those who share values"]},
+      {"flaw": "I am inflexible in my thinking.", "maps_to": ["rigid", "stubborn", "cannot adapt", "my way or the highway"]},
+      {"flaw": "I am suspicious of strangers and expect the worst of people.", "maps_to": ["paranoid", "cynical", "misanthropic", "defensive"]},
+      {"flaw": "Once I pick a goal, I become obsessed with it to the detriment of everything else.", "maps_to": ["obsessive", "tunnel vision", "neglects relationships for goals"]},
+      {"flaw": "I have trouble keeping my true feelings hidden. My sharp tongue lands me in trouble.", "maps_to": ["blunt to a fault", "says what everyone is thinking", "poor filter"]},
+      {"flaw": "I'd rather eat my armor than admit when I'm wrong.", "maps_to": ["stubborn pride", "cannot admit mistakes", "ego-driven"]},
+      {"flaw": "I have a weakness for the vices of the city, especially hard drink.", "maps_to": ["addiction issues", "poor impulse control around vices", "self-medicating"]},
+      {"flaw": "Secretly, I believe that things would be better if I were in charge of everything.", "maps_to": ["control freak", "micromanager", "quietly arrogant", "believes they know best"]},
+      {"flaw": "I have trouble trusting in my allies.", "maps_to": ["trust issues", "lone wolf tendencies", "difficulty delegating"]},
+      {"flaw": "I'll do anything to win fame and renown.", "maps_to": ["fame-seeking", "attention-hungry", "ego-driven decisions"]},
+      {"flaw": "I'm never satisfied with what I have—I always want more.", "maps_to": ["greedy", "restless", "hedonic treadmill", "never content"]},
+      {"flaw": "I overlook obvious solutions in favor of complicated ones.", "maps_to": ["overthinks", "intellectualizes simple problems", "analysis paralysis"]}
+    ]
+  }
+]

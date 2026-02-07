@@ -1,0 +1,93 @@
+[
+  {
+    "type": "background",
+    "name": "Acolyte",
+    "description": "Spent life in service to a temple or religious institution. Deep understanding of religious practices and the comfort of faith.",
+    "personality_markers": ["devoted to a cause or institution", "shelter those in need", "ritualistic habits", "community of faith", "guided by higher purpose"],
+    "real_world_analogues": ["religious professionals", "lifelong volunteers", "people raised in strong faith traditions", "institutional loyalists"]
+  },
+  {
+    "type": "background",
+    "name": "Charlatan",
+    "description": "Survived by wit, charm, and deception. Understands people's desires and how to exploit them.",
+    "personality_markers": ["silver-tongued", "reads people easily", "comfortable with deception", "creates false identities", "thrives on the con", "adaptable persona"],
+    "real_world_analogues": ["confidence tricksters", "method actors", "sales professionals who stretch the truth", "social chameleons"]
+  },
+  {
+    "type": "background",
+    "name": "Criminal",
+    "description": "Has a history of breaking the law. Understands the underworld and operates outside normal social structures.",
+    "personality_markers": ["streetwise", "operates outside the system", "has criminal contacts", "knows how to disappear", "practical morality", "values loyalty within their circle"],
+    "real_world_analogues": ["people with criminal histories trying to go straight", "those who grew up in rough environments", "individuals who understand both sides of the law"]
+  },
+  {
+    "type": "background",
+    "name": "Entertainer",
+    "description": "Thrives in front of an audience. Performance and the spotlight are second nature.",
+    "personality_markers": ["loves attention", "natural performer", "knows how to work a crowd", "dramatic", "lives for applause", "expressive"],
+    "real_world_analogues": ["performers and musicians", "public speakers", "social media influencers", "class clowns who grew up", "people who light up in front of an audience"]
+  },
+  {
+    "type": "background",
+    "name": "Folk Hero",
+    "description": "Rose from humble origins to become a champion of common people. Earned respect through deeds, not birth.",
+    "personality_markers": ["humble origins", "champion of the underdog", "practical skills", "respected by common people", "rose through merit", "distrusts elites"],
+    "real_world_analogues": ["first-generation college graduates who give back", "community organizers", "self-made professionals who remember where they came from", "union leaders"]
+  },
+  {
+    "type": "background",
+    "name": "Guild Artisan",
+    "description": "Member of a professional guild or trade organization. Takes pride in craft and professional standards.",
+    "personality_markers": ["takes pride in craft", "professional standards", "networking skills", "business-minded", "values quality work", "respects expertise"],
+    "real_world_analogues": ["skilled tradespeople", "professional association members", "craftsmen and artisans", "people who define themselves by their profession"]
+  },
+  {
+    "type": "background",
+    "name": "Hermit",
+    "description": "Spent extended time in seclusion, pursuing contemplation, study, or spiritual growth. Has unique insights from solitude.",
+    "personality_markers": ["introspective", "comfortable alone", "possesses unusual insights", "detached from social norms", "philosophical", "values solitude"],
+    "real_world_analogues": ["researchers who disappear into their work", "people who took sabbaticals", "spiritual retreatants", "introverts who found wisdom in solitude"]
+  },
+  {
+    "type": "background",
+    "name": "Noble",
+    "description": "Born into privilege and trained to lead. Comfortable with power, wealth, and social hierarchy.",
+    "personality_markers": ["entitled but possibly noblesse oblige", "comfortable with authority", "expects deference", "educated in leadership", "connected to powerful networks", "trained in etiquette"],
+    "real_world_analogues": ["old money families", "political dynasties", "legacy admits", "people who grew up expecting to lead", "those comfortable in elite social circles"]
+  },
+  {
+    "type": "background",
+    "name": "Outlander",
+    "description": "Grew up in the wilderness, far from civilization. Self-reliant and uncomfortable in urban or institutional settings.",
+    "personality_markers": ["self-reliant", "distrusts civilization", "excellent survival instincts", "direct and blunt", "uncomfortable with social niceties", "physically tough"],
+    "real_world_analogues": ["rural upbringing", "people who grew up off the grid", "outdoorspeople who prefer nature to cities", "those uncomfortable with institutional culture"]
+  },
+  {
+    "type": "background",
+    "name": "Sage",
+    "description": "Devoted to scholarly pursuits and the acquisition of knowledge. Trained in research, libraries, and academic institutions.",
+    "personality_markers": ["knowledge-obsessed", "researcher at heart", "believes answers exist in data", "absent-minded about practical matters", "loves learning for its own sake", "methodical thinker"],
+    "real_world_analogues": ["professors and academics", "lifelong students", "research scientists", "people who read voraciously", "those who always need to understand why"]
+  },
+  {
+    "type": "background",
+    "name": "Sailor",
+    "description": "Spent years at sea or traveling. Comfortable with danger, teamwork under pressure, and unpredictable conditions.",
+    "personality_markers": ["adaptable to chaos", "team player under pressure", "well-traveled", "superstitious", "rough around the edges", "loyal to crew"],
+    "real_world_analogues": ["military veterans", "people who've worked high-stress team environments", "those who've traveled extensively", "emergency responders"]
+  },
+  {
+    "type": "background",
+    "name": "Soldier",
+    "description": "Served in a military organization. Trained in discipline, hierarchy, and combat. Carries the weight of service.",
+    "personality_markers": ["disciplined", "follows chain of command", "bonds forged in hardship", "haunted by past", "respects rank and structure", "mission-oriented"],
+    "real_world_analogues": ["military veterans", "law enforcement", "paramilitary organizations", "people shaped by institutional discipline"]
+  },
+  {
+    "type": "background",
+    "name": "Urchin",
+    "description": "Grew up on the streets with nothing. Survived through wits, speed, and street knowledge.",
+    "personality_markers": ["streetwise", "resourceful with nothing", "distrusts authority", "scrappy survivor", "knows the value of a coin", "empathy for the downtrodden"],
+    "real_world_analogues": ["people who grew up in poverty", "self-made from nothing", "those who survived tough childhoods", "foster care alumni who thrived despite everything"]
+  }
+]

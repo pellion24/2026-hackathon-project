@@ -1,0 +1,110 @@
+[
+  {
+    "type": "class",
+    "name": "Barbarian",
+    "primary_ability": "Strength",
+    "description": "Barbarians are fierce warriors driven by primal rage and raw physical power. They thrive in chaos and rely on instinct over strategy.",
+    "personality_markers": ["impulsive", "passionate", "physically dominant", "direct", "confrontational", "resilient", "lives in the moment", "distrusts complexity", "emotionally intense", "protective of tribe or group"],
+    "typical_alignments": ["Chaotic Good", "Chaotic Neutral", "Neutral"],
+    "real_world_analogues": ["athletes who play through pain", "people who act first and think later", "fiercely loyal protectors", "those who thrive under pressure through sheer force of will"]
+  },
+  {
+    "type": "class",
+    "name": "Bard",
+    "primary_ability": "Charisma",
+    "description": "Bards are versatile performers, storytellers, and diplomats who use charm, wit, and creativity to influence others and solve problems.",
+    "personality_markers": ["charismatic", "persuasive", "creative", "socially adept", "storyteller", "jack-of-all-trades", "curious", "entertaining", "adaptable", "emotionally intelligent", "knows a little about everything"],
+    "typical_alignments": ["Chaotic Good", "Neutral Good", "Chaotic Neutral"],
+    "real_world_analogues": ["natural entertainers", "skilled negotiators", "people who talk their way out of anything", "social butterflies with hidden depth", "trial lawyers who captivate juries"]
+  },
+  {
+    "type": "class",
+    "name": "Cleric",
+    "primary_ability": "Wisdom",
+    "description": "Clerics are devoted servants of a higher cause or belief system. They heal, protect, and guide others through faith and conviction.",
+    "personality_markers": ["devoted", "principled", "compassionate", "guided by belief system", "healer", "community-oriented", "morally grounded", "selfless", "authoritative on matters of faith or ethics", "counselor"],
+    "typical_alignments": ["Lawful Good", "Neutral Good", "Lawful Neutral"],
+    "real_world_analogues": ["clergy and spiritual leaders", "social workers", "therapists guided by strong ethical framework", "doctors motivated by calling", "people whose identity is defined by service to others"]
+  },
+  {
+    "type": "class",
+    "name": "Druid",
+    "primary_ability": "Wisdom",
+    "description": "Druids are guardians of the natural world who draw power from nature. They are adaptable, observant, and deeply connected to cycles and systems.",
+    "personality_markers": ["nature-loving", "observant", "patient", "values balance", "adaptable", "spiritual but not dogmatic", "prefers simplicity", "systems thinker", "uncomfortable with artifice", "cyclical worldview"],
+    "typical_alignments": ["Neutral", "Neutral Good", "Chaotic Neutral"],
+    "real_world_analogues": ["environmentalists", "holistic thinkers", "people who prefer the outdoors to offices", "those who see patterns in complex systems", "minimalists"]
+  },
+  {
+    "type": "class",
+    "name": "Fighter",
+    "primary_ability": "Strength or Dexterity",
+    "description": "Fighters are disciplined combat specialists who master weapons and tactics through training and dedication. They are reliable, practical, and effective.",
+    "personality_markers": ["disciplined", "practical", "reliable", "tactically minded", "physically capable", "no-nonsense", "values competence", "goal-oriented", "trains hard", "straightforward communicator"],
+    "typical_alignments": ["Lawful Neutral", "Lawful Good", "Neutral"],
+    "real_world_analogues": ["military professionals", "athletes with rigorous training regimens", "pragmatic problem-solvers", "people who just get things done", "blue-collar work ethic"]
+  },
+  {
+    "type": "class",
+    "name": "Monk",
+    "primary_ability": "Dexterity and Wisdom",
+    "description": "Monks are masters of self-discipline who harness inner energy through meditation, training, and ascetic practice. They value self-improvement and inner harmony.",
+    "personality_markers": ["self-disciplined", "introspective", "calm under pressure", "minimalist", "values self-improvement", "controlled", "philosophical", "observant", "prefers precision over brute force", "inner-directed"],
+    "typical_alignments": ["Lawful Good", "Lawful Neutral", "Neutral"],
+    "real_world_analogues": ["martial artists", "meditators", "ascetics", "people with extreme self-control", "those who pursue mastery through practice and repetition"]
+  },
+  {
+    "type": "class",
+    "name": "Paladin",
+    "primary_ability": "Strength and Charisma",
+    "description": "Paladins are holy warriors bound by sacred oaths. They combine martial prowess with unwavering moral conviction and lead by example.",
+    "personality_markers": ["righteous", "courageous", "morally rigid", "leader", "protective", "inspiring", "principled to a fault", "struggles with moral gray areas", "self-sacrificing", "driven by oath or duty"],
+    "typical_alignments": ["Lawful Good", "Neutral Good"],
+    "real_world_analogues": ["crusading attorneys", "activists with unwavering conviction", "military officers who lead from the front", "whistleblowers", "people who cannot let injustice stand"]
+  },
+  {
+    "type": "class",
+    "name": "Ranger",
+    "primary_ability": "Dexterity and Wisdom",
+    "description": "Rangers are skilled trackers and hunters who operate on the fringes. They are self-reliant, observant, and comfortable working alone.",
+    "personality_markers": ["independent", "observant", "self-reliant", "quiet competence", "prefers solitude or small groups", "protective of specific domain", "practical", "alert", "patient", "uncomfortable in crowds"],
+    "typical_alignments": ["Neutral Good", "Chaotic Good", "Neutral"],
+    "real_world_analogues": ["introverts with deep expertise", "field researchers", "solo practitioners", "detectives", "people who notice everything but say little"]
+  },
+  {
+    "type": "class",
+    "name": "Rogue",
+    "primary_ability": "Dexterity",
+    "description": "Rogues are cunning, resourceful operators who rely on skill, stealth, and exploiting vulnerabilities rather than direct confrontation.",
+    "personality_markers": ["cunning", "resourceful", "independent", "opportunistic", "streetwise", "thinks on their feet", "charm as a tool", "risk-taker", "values freedom", "pragmatic morality", "always has an angle"],
+    "typical_alignments": ["Chaotic Neutral", "Chaotic Good", "Neutral Evil"],
+    "real_world_analogues": ["entrepreneurs who bend rules", "street-smart negotiators", "hackers", "people who find shortcuts and loopholes", "con artists with hearts of gold"]
+  },
+  {
+    "type": "class",
+    "name": "Sorcerer",
+    "primary_ability": "Charisma",
+    "description": "Sorcerers wield innate magical power that comes from within rather than from study. Their abilities are instinctive and tied to their identity.",
+    "personality_markers": ["innately talented", "instinctive", "emotional power", "struggles with control", "identity tied to abilities", "stands out without trying", "raw potential", "charismatic but volatile", "doesn't follow conventional paths"],
+    "typical_alignments": ["Chaotic Good", "Chaotic Neutral", "Neutral"],
+    "real_world_analogues": ["natural prodigies", "people with raw charisma who never had formal training", "artists who create from intuition", "those whose talent feels like destiny"]
+  },
+  {
+    "type": "class",
+    "name": "Warlock",
+    "primary_ability": "Charisma",
+    "description": "Warlocks gain power through pacts with powerful entities. They are ambitious seekers of forbidden knowledge who made deals to get ahead.",
+    "personality_markers": ["ambitious", "secretive", "willing to make deals", "knowledge-seeking", "morally flexible", "driven by specific goal", "comfortable with uncomfortable truths", "transactional relationships", "power-hungry but not necessarily evil"],
+    "typical_alignments": ["Chaotic Neutral", "Neutral Evil", "Neutral"],
+    "real_world_analogues": ["people who made Faustian bargains for success", "those who work within morally gray systems to gain power", "corporate climbers who know where the bodies are buried", "researchers who push ethical boundaries"]
+  },
+  {
+    "type": "class",
+    "name": "Wizard",
+    "primary_ability": "Intelligence",
+    "description": "Wizards acquire power through rigorous study, research, and intellectual mastery. They are scholars who believe knowledge is the ultimate power.",
+    "personality_markers": ["intellectual", "studious", "methodical", "analytical", "values knowledge above all", "bookish", "plans extensively", "sometimes socially awkward", "arrogant about intelligence", "detail-oriented", "theoretical"],
+    "typical_alignments": ["Lawful Neutral", "Neutral", "Neutral Good"],
+    "real_world_analogues": ["academics", "researchers", "people who read the manual", "analysts who need all the data before deciding", "those who believe every problem has an intellectual solution"]
+  }
+]

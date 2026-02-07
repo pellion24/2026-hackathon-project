@@ -1,0 +1,74 @@
+[
+  {
+    "type": "alignment",
+    "name": "Lawful Good",
+    "short": "LG",
+    "description": "Acts with compassion and honor within a structured moral framework. Believes in rules, duty, and doing right by others.",
+    "behavioral_markers": ["follows rules and expects others to", "strong sense of duty", "honest and trustworthy", "protects the weak", "respects authority and hierarchy", "believes systems can be just", "sacrifices personal desire for the greater good"],
+    "real_world_examples": ["dedicated public servants", "ethical judges", "military officers with strong moral code", "volunteer firefighters", "people who always do the right thing even when no one is watching"]
+  },
+  {
+    "type": "alignment",
+    "name": "Neutral Good",
+    "short": "NG",
+    "description": "Does the best they can to help others without bias toward or against order. Follows their conscience above all else.",
+    "behavioral_markers": ["helps people without needing a system", "flexible about rules if helping requires it", "kind and compassionate", "avoids extremes", "judges situations individually", "motivated by genuine desire to do good", "pragmatic idealist"],
+    "real_world_examples": ["humanitarian workers", "good samaritans", "doctors who treat regardless of ability to pay", "people who bend rules to help someone in need"]
+  },
+  {
+    "type": "alignment",
+    "name": "Chaotic Good",
+    "short": "CG",
+    "description": "Acts according to their own moral compass with little regard for rules or expectations. Values individual freedom and does what is right on their own terms.",
+    "behavioral_markers": ["rebels against unjust authority", "acts on conscience not rules", "fiercely independent", "champions the underdog", "impatient with bureaucracy", "breaks rules for good reasons", "values personal freedom highly"],
+    "real_world_examples": ["civil rights activists", "whistleblowers", "Robin Hood types", "defense attorneys who fight the system", "hacktivists"]
+  },
+  {
+    "type": "alignment",
+    "name": "Lawful Neutral",
+    "short": "LN",
+    "description": "Acts in accordance with law, tradition, or personal code without bias toward good or evil. Order and structure are paramount.",
+    "behavioral_markers": ["follows rules consistently", "values order and structure", "reliable and predictable", "believes in process", "may enforce rules even when outcomes seem harsh", "compartmentalizes morality from duty", "tradition-bound"],
+    "real_world_examples": ["strict judges", "bureaucrats who go by the book", "career military who follow orders", "auditors", "people who believe the system works if everyone follows it"]
+  },
+  {
+    "type": "alignment",
+    "name": "True Neutral",
+    "short": "N",
+    "description": "Acts without strong commitment to good, evil, law, or chaos. May act pragmatically, maintain balance, or simply not engage with moral frameworks.",
+    "behavioral_markers": ["pragmatic above all", "avoids taking sides", "judges each situation independently", "values balance", "may seem apathetic to moral causes", "self-sufficient", "lives and lets live", "philosophical detachment"],
+    "real_world_examples": ["pragmatic centrists", "academics focused purely on truth", "people who mind their own business", "mediators", "those who refuse to be drawn into conflicts"]
+  },
+  {
+    "type": "alignment",
+    "name": "Chaotic Neutral",
+    "short": "CN",
+    "description": "Follows their own whims and values personal freedom above all else. Unpredictable and resistant to being controlled.",
+    "behavioral_markers": ["unpredictable", "values freedom above all", "resists authority reflexively", "self-interested but not malicious", "impulsive", "dislikes commitments", "does what feels right in the moment", "allergic to routine"],
+    "real_world_examples": ["free spirits", "serial entrepreneurs", "people who quit jobs on impulse", "artists who refuse to conform", "those who live life entirely on their own terms"]
+  },
+  {
+    "type": "alignment",
+    "name": "Lawful Evil",
+    "short": "LE",
+    "description": "Uses rules, systems, and structures to dominate and control. Operates within the law to serve their own interests at others' expense.",
+    "behavioral_markers": ["manipulates systems for personal gain", "respects hierarchy when at the top", "values loyalty as a tool", "methodical and calculating", "exploits loopholes", "maintains appearances", "believes might makes right within structure"],
+    "real_world_examples": ["corrupt politicians who stay within legal bounds", "corporate executives who exploit workers legally", "tyrants who rule through bureaucracy", "those who weaponize rules against others"]
+  },
+  {
+    "type": "alignment",
+    "name": "Neutral Evil",
+    "short": "NE",
+    "description": "Purely self-interested without commitment to rules or chaos. Does whatever they can get away with to advance their own interests.",
+    "behavioral_markers": ["purely self-interested", "no loyalty beyond utility", "will cooperate or betray as convenient", "lacks empathy", "pragmatic selfishness", "no moral framework beyond personal gain", "uses people as tools"],
+    "real_world_examples": ["mercenaries with no code", "people who exploit anyone if profitable", "con artists without charm", "those who betray trust without remorse"]
+  },
+  {
+    "type": "alignment",
+    "name": "Chaotic Evil",
+    "short": "CE",
+    "description": "Acts with arbitrary violence and selfishness. Driven by greed, hatred, or pure desire for destruction with no regard for rules or others.",
+    "behavioral_markers": ["destructive", "unpredictable cruelty", "no respect for anything", "gratuitous harm", "anarchic", "motivated by rage or sadism", "cannot be reasoned with", "thrives on chaos and suffering"],
+    "real_world_examples": ["This alignment is rarely applicable to real people in good faith analysis and should be used extremely sparingly. Most real humans, even deeply flawed ones, have more nuance."]
+  }
+]
