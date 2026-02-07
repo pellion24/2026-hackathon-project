@@ -1,0 +1,93 @@
+{
+  "name": "Elara Moonwhisper",
+  "player": {
+    "name": "Player Two"
+  },
+  "race": {
+    "name": "High Elf"
+  },
+  "classes": [
+    {
+      "name": "Wizard",
+      "level": 5,
+      "hit_die": "d6",
+      "spellcasting_stat": "INT"
+    }
+  ],
+  "alignment": "Neutral Good",
+  "ability_scores": {
+    "STR": 8,
+    "DEX": 14,
+    "CON": 13,
+    "INT": 17,
+    "WIS": 12,
+    "CHA": 10
+  },
+  "skills": {
+    "Acrobatics": false,
+    "Animal Handling": false,
+    "Arcana": true,
+    "Athletics": false,
+    "Deception": false,
+    "History": true,
+    "Insight": false,
+    "Intimidation": false,
+    "Investigation": true,
+    "Medicine": false,
+    "Nature": false,
+    "Perception": false,
+    "Performance": false,
+    "Persuasion": false,
+    "Religion": false,
+    "Sleight of Hand": false,
+    "Stealth": false,
+    "Survival": false
+  },
+  "saving_throws": {
+    "STR": false,
+    "DEX": false,
+    "CON": false,
+    "INT": true,
+    "WIS": true,
+    "CHA": false
+  },
+  "hit_points": {
+    "max": 26,
+    "current": 26
+  },
+  "armor_class": {
+    "value": 12
+  },
+  "speed": {
+    "Walk": 30
+  },
+  "details": {
+    "personality": "I am utterly serene, even in the face of disaster. I live for the thrill of discovering ancient knowledge.",
+    "ideal": "Knowledge. The path to power and self-improvement is through knowledge.",
+    "bond": "I've been searching my whole life for the answer to a certain question about the nature of magic.",
+    "flaw": "I am easily distracted by the promise of information."
+  },
+  "weapons": [
+    {
+      "name": "Quarterstaff",
+      "attack_bonus": 1,
+      "damage": "1d6-1",
+      "damage_type": "bludgeoning"
+    },
+    {
+      "name": "Dagger",
+      "attack_bonus": 4,
+      "damage": "1d4+2",
+      "damage_type": "piercing"
+    }
+  ],
+  "spells": [
+    "Fire Bolt",
+    "Mage Hand",
+    "Prestidigitation",
+    "Shield",
+    "Magic Missile",
+    "Fireball",
+    "Counterspell"
+  ]
+}
