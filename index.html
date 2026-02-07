@@ -28,6 +28,19 @@
 
     <br>
     <pre id="result"></pre>
+
+    <!-- Class Display Section -->
+    <div id="class-display" class="hidden">
+        <div class="class-image-container">
+            <img id="class-image" src="" alt="Class Image">
+        </div>
+        <div class="class-description-container">
+            <h2 id="class-name" class="unifrakturmaguntia-regular"></h2>
+            <p id="class-description"></p>
+        </div>
+    </div>
+
+    <script src="static/js/classDescriptions.js"></script>
     <script>
 
         const messages = ["Infusing a little magic into your character",
@@ -38,6 +51,32 @@
         function chooseMessage() {
             const index = Math.floor(Math.random() * messages.length);
             return messages[index];
+        }
+
+        function displayClassInfo(charClass) {
+            const classDisplay = document.getElementById("class-display");
+            const classImage = document.getElementById("class-image");
+            const className = document.getElementById("class-name");
+            const classDesc = document.getElementById("class-description");
+
+            // Get class description from classDescriptions.js
+            const classKey = charClass.toLowerCase();
+            const classData = classDescriptions[classKey];
+
+            if (classData) {
+                className.textContent = classData.name;
+                classDesc.textContent = classData.displayText;
+            } else {
+                className.textContent = charClass;
+                classDesc.textContent = "Description not available.";
+            }
+
+            // Set the class image (images should be named like: barbarian.png, wizard.png, etc.)
+            classImage.src = `static/images/classes/${classKey}.png`;
+            classImage.alt = `${charClass} Class Image`;
+
+            // Show the class display section
+            classDisplay.classList.remove("hidden");
         }
 
         document.getElementById("submit").addEventListener("click", async () => {
@@ -63,6 +102,9 @@
                 //const data = await response.json();
                 //resultBox.textContent = data.character_sheet;
                 if (response.headers.get("content-type").includes("application/pdf")) {
+                    // Get the character class from the response header
+                    const charClass = response.headers.get("X-Character-Class") || "Unknown";
+                    
                     const blob = await response.blob();
                     const url = URL.createObjectURL(blob);
                     const a = document.createElement("a");
@@ -71,6 +113,9 @@
                     a.click();
                     URL.revokeObjectURL(url);
                     resultBox.textContent = "Done! PDF downloaded.";
+
+                    // Display the class image and description
+                    displayClassInfo(charClass);
                 } else {
                     console.log(response)
                     const data = await response.json();

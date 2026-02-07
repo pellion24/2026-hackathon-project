@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from fastapi.responses import HTMLResponse, FileResponse
+from fastapi.responses import HTMLResponse, FileResponse, Response
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 import json
@@ -48,7 +48,23 @@ async def analyze(req: Request):
     # 3. Generate PDF
     try:
         pdf_path = generate_character_sheet(temp_json_path, output_folder="/tmp/sheets")
-        return FileResponse(pdf_path, filename=os.path.basename(pdf_path), media_type="application/pdf")
+        
+        # Get the character class for the frontend
+        char_class = character.get("class", "Unknown")
+        
+        # Read PDF and return with custom header containing class info
+        with open(pdf_path, "rb") as pdf_file:
+            pdf_content = pdf_file.read()
+        
+        return Response(
+            content=pdf_content,
+            media_type="application/pdf",
+            headers={
+                "Content-Disposition": f'attachment; filename="{os.path.basename(pdf_path)}"',
+                "X-Character-Class": char_class,
+                "Access-Control-Expose-Headers": "X-Character-Class"
+            }
+        )
     except Exception as e:
         return {"error": "Failed to generate PDF", "details": str(e)}
     finally:
