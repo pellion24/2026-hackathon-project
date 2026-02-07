@@ -44,12 +44,14 @@
             const description = document.getElementById("description").value;
             const resultBox = document.getElementById("result");
             const overlay = document.getElementById("dice-overlay");
+            const grid = document.querySelector(".grid-container");
 
             resultBox.textContent = chooseMessage();
             resultBox.classList.add('loading');
 
             try {
                 overlay.classList.remove('hidden');
+
 
                 const response = await fetch("/analyze", {
                     method: "POST",
@@ -64,6 +66,7 @@
                 //resultBox.textContent = data.character_sheet;
 
                 const data = await response.json();
+                
 
                 if (data.pdf_url) {
                     // Trigger download
@@ -88,11 +91,49 @@
                 resultBox.textContent = "The tavern is closed (Server Error)";
             } finally {
                 overlay.classList.add("hidden");
+                grid.classList.remove("hidden");
             }
 
         });
 
     </script>
+
+    <section class="grid-container hidden">
+        <div class="offical-art card">
+            <img src="static/images/Barbarian%20DND.png">
+        </div>
+        <div class="character-info card">
+            <h2 class="unifrakturmaguntia-regular" id="character-name">Character name</h2>
+            <h3 class="unifrakturmaguntia-regular" >class</h3>
+            <ul>
+                <li id="class-name">class name goes here</li>
+            </ul>
+            <h3 class="unifrakturmaguntia-regular" >race</h3>
+            <ul>
+                <li id="race-name">race name goes here</li>
+            </ul>
+        </div>
+        <div class="pdf-viewer card">
+            <h1 class="unifrakturmaguntia-regular">pdf-view</h1>
+            <iframe src="dnd_pdf_filler_simple/assets/5E_CharacterSheet_Fillable.pdf" id="pdfViewer"></iframe>
+            <script>
+                const params = new URLSearchParams(window.location.search);
+                document.getElementById("pdfViewer").src = params.get("pdf");
+            </script>
+        </div>
+        <div class="class-description card">
+            <h2 class="unifrakturmaguntia-regular" >Class Description</h2>
+            <ul>
+                <li id="class-description">class description goes here</li>
+            </ul>
+        </div>
+        <div class="Backstory card">
+            <h2 class="unifrakturmaguntia-regular" id="backstory">Backstory</h2>
+            <ul>
+                <li id="backstory">backstory goes here</li>
+            </ul>
+        </div>
+    </section>
 
 </body>
 
