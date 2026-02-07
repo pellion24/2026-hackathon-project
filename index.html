@@ -113,25 +113,9 @@
         <button id="submit">⚔ Create ⚔</button>
     </div>
 
-    <!-- Test Controls (remove before production) -->
-    <div id="test-controls">
-        <label for="test-class">Test Class Display: </label>
-        <select id="test-class">
-            <option value="artificer">Artificer</option>
-            <option value="barbarian">Barbarian</option>
-            <option value="bard" selected>Bard</option>
-            <option value="cleric">Cleric</option>
-            <option value="druid">Druid</option>
-            <option value="fighter">Fighter</option>
-            <option value="monk">Monk</option>
-            <option value="paladin">Paladin</option>
-            <option value="ranger">Ranger</option>
-            <option value="rogue">Rogue</option>
-            <option value="sorcerer">Sorcerer</option>
-            <option value="warlock">Warlock</option>
-            <option value="wizard">Wizard</option>
-        </select>
-        <button id="test-btn">Test</button>
+    <!-- Example Output Button -->
+    <div id="example-controls">
+        <button id="example-btn">📜 View Example Character</button>
     </div>
 
 
@@ -230,49 +214,64 @@
             charInfo.classList.remove("hidden");
         }
 
-        // Display PDF viewer function
-        function displayPdfViewer(pdfUrl) {
+        // Display PDF viewer function - supports both URL and Blob
+        function displayPdfViewer(pdfUrlOrBlob, filename = "character_sheet.pdf") {
             const pdfSection = document.getElementById("pdf-viewer-section");
             const pdfViewer = document.getElementById("pdf-viewer");
             const downloadLink = document.getElementById("pdf-download-link");
             
-            // Add timestamp to bust cache
-            const urlWithTimestamp = pdfUrl + "?t=" + Date.now();
-            pdfViewer.src = urlWithTimestamp;
-            downloadLink.href = urlWithTimestamp;
+            let viewerUrl;
+            if (pdfUrlOrBlob instanceof Blob) {
+                // Create object URL for blob
+                viewerUrl = URL.createObjectURL(pdfUrlOrBlob);
+            } else {
+                // Add timestamp to bust cache for regular URLs
+                viewerUrl = pdfUrlOrBlob + "?t=" + Date.now();
+            }
+            
+            pdfViewer.src = viewerUrl;
+            downloadLink.href = viewerUrl;
+            downloadLink.download = filename;
             pdfSection.classList.remove("hidden");
+            
+            // Scroll to PDF section
+            pdfSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
 
-        // Test bard example data
-        const testBardData = {
+        // Example character data (Bard)
+        const exampleCharData = {
             name: "Silvius Nightwhisper",
             race: "Half-Elf",
             background: "Charlatan",
             backstory: "Silvius learned early that a silver tongue and quick thinking could open more doors than brute force. He uses his natural charisma and perfect memory to weave elaborate deceptions that help those in need, though his methods often blur the line between right and wrong."
         };
 
-        // Test button handler
-        document.getElementById("test-btn").addEventListener("click", () => {
-            const selectedClass = document.getElementById("test-class").value;
-            displayClassInfo(selectedClass);
-
-            // If bard is selected, also show character info and PDF
-            if (selectedClass === "bard") {
-                displayCharacterInfo(testBardData);
-                displayPdfViewer("static/SilviusNightwhisper_Level3.pdf");
+        // Example button handler - fetches PDF from server
+        document.getElementById("example-btn").addEventListener("click", async () => {
+            const btn = document.getElementById("example-btn");
+            const originalText = btn.textContent;
+            btn.textContent = "⏳ Loading...";
+            btn.disabled = true;
+            
+            try {
+                // Show class info and character details
+                displayClassInfo("bard");
+                displayCharacterInfo(exampleCharData);
+                
+                // Fetch PDF from server
+                const response = await fetch("/test-bard-pdf");
+                if (response.ok) {
+                    const blob = await response.blob();
+                    displayPdfViewer(blob, "SilviusNightwhisper_Level3.pdf");
+                } else {
+                    console.error("Failed to load example PDF");
+                }
+            } catch (error) {
+                console.error("Error loading example:", error);
+            } finally {
+                btn.textContent = originalText;
+                btn.disabled = false;
             }
-        });
-
-        // Add a dedicated test button for full bard example
-        const testFullBardBtn = document.createElement("button");
-        testFullBardBtn.id = "test-full-bard";
-        testFullBardBtn.textContent = "Test Full Bard Example";
-        document.getElementById("test-controls").appendChild(testFullBardBtn);
-
-        testFullBardBtn.addEventListener("click", () => {
-            displayClassInfo("bard");
-            displayCharacterInfo(testBardData);
-            displayPdfViewer("static/SilviusNightwhisper_Level3.pdf");
         });
 
         document.getElementById("submit").addEventListener("click", async () => {
@@ -298,20 +297,30 @@
                 //const data = await response.json();
                 //resultBox.textContent = data.character_sheet;
                 if (response.headers.get("content-type").includes("application/pdf")) {
-                    // Get the character class from the response header
+                    // Get character info from response headers
                     const charClass = response.headers.get("X-Character-Class") || "Unknown";
+                    const charName = response.headers.get("X-Character-Name") || "Unknown Hero";
+                    const charRace = response.headers.get("X-Character-Race") || "Unknown";
+                    const charBackground = response.headers.get("X-Character-Background") || "Unknown";
+                    const charBackstory = response.headers.get("X-Character-Backstory") || "A mysterious adventurer...";
                     
                     const blob = await response.blob();
-                    const url = URL.createObjectURL(blob);
-                    const a = document.createElement("a");
-                    a.href = url;
-                    a.download = "character_sheet.pdf";
-                    a.click();
-                    URL.revokeObjectURL(url);
-                    resultBox.textContent = "✨ Your legend has been forged! Scroll downloaded. ✨";
-
+                    
                     // Display the class image and description
                     displayClassInfo(charClass);
+                    
+                    // Display character info
+                    displayCharacterInfo({
+                        name: charName,
+                        race: charRace,
+                        background: charBackground,
+                        backstory: charBackstory
+                    });
+                    
+                    // Display PDF in viewer
+                    displayPdfViewer(blob, `${charName.replace(/\s+/g, '_')}_character_sheet.pdf`);
+                    
+                    resultBox.textContent = "✨ Your legend has been forged! View your character sheet below. ✨";
                 } else {
                     console.log(response)
                     const data = await response.json();

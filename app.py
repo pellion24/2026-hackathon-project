@@ -49,10 +49,14 @@ async def analyze(req: Request):
     try:
         pdf_path = generate_character_sheet(temp_json_path, output_folder="/tmp/sheets")
         
-        # Get the character class for the frontend
+        # Get character info for the frontend
         char_class = character.get("class", "Unknown")
+        char_name = character.get("name", "Unknown Hero")
+        char_race = character.get("race", "Unknown")
+        char_background = character.get("background", "Unknown")
+        char_backstory = character.get("backstory", "A mysterious adventurer...")
         
-        # Read PDF and return with custom header containing class info
+        # Read PDF and return with custom headers containing character info
         with open(pdf_path, "rb") as pdf_file:
             pdf_content = pdf_file.read()
         
@@ -62,7 +66,11 @@ async def analyze(req: Request):
             headers={
                 "Content-Disposition": f'attachment; filename="{os.path.basename(pdf_path)}"',
                 "X-Character-Class": char_class,
-                "Access-Control-Expose-Headers": "X-Character-Class"
+                "X-Character-Name": char_name,
+                "X-Character-Race": char_race,
+                "X-Character-Background": char_background,
+                "X-Character-Backstory": char_backstory[:500],  # Limit backstory length for header
+                "Access-Control-Expose-Headers": "X-Character-Class, X-Character-Name, X-Character-Race, X-Character-Background, X-Character-Backstory"
             }
         )
     except Exception as e:
