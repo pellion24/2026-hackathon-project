@@ -45,9 +45,13 @@ async def analyze(req: Request):
         json.dump(character, f)
         temp_json_path = f.name
 
-    # 3. Generate PDF
+    # 3. Generate PDF (use system temp dir for cross-platform compatibility)
     try:
-        pdf_path = generate_character_sheet(temp_json_path, output_folder="/tmp/sheets")
+        import pathlib
+        output_folder = pathlib.Path(tempfile.gettempdir()) / "dnd_sheets"
+        output_folder.mkdir(exist_ok=True)
+        
+        pdf_path = generate_character_sheet(temp_json_path, output_folder=str(output_folder))
         
         # Get character info for the frontend
         char_class = character.get("class", "Unknown")
