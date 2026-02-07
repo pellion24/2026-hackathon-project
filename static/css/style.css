@@ -16,7 +16,26 @@
     --shadow: rgba(0, 0, 0, 0.5);
 }
 
+/* CSS Variables for consistent theming */
+:root {
+    --parchment-light: #f4e4bc;
+    --parchment-dark: #d4b896;
+    --gold: #c9a227;
+    --gold-light: #e6c65c;
+    --gold-dark: #8b6914;
+    --dragon-red: #8b0000;
+    --dragon-red-light: #b22222;
+    --blood-red: #660000;
+    --dark-leather: #2c1810;
+    --leather: #4a3728;
+    --ink-black: #1a1a1a;
+    --mystical-purple: #4a0080;
+    --arcane-blue: #1a3a5c;
+    --shadow: rgba(0, 0, 0, 0.5);
+}
+
 body {
+    background-color: var(--leather);
     background-color: var(--leather);
 }
 
@@ -82,6 +101,15 @@ textarea {
 .user-input{
     display:flex;
     flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 700px;
+    background:
+            linear-gradient(135deg, rgba(74, 55, 40, 0.9), rgba(44, 24, 16, 0.95));
+    border: 3px solid var(--gold-dark);
+    border-radius: 15px;
+    position: relative;
     align-items: center;
     padding: 30px;
     margin: 20px auto;
