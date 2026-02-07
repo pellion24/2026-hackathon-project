@@ -1,0 +1,85 @@
+{
+  "name": "Thorin Oakenshield",
+  "player": {
+    "name": "Player One"
+  },
+  "race": {
+    "name": "Mountain Dwarf"
+  },
+  "classes": [
+    {
+      "name": "Fighter",
+      "level": 3,
+      "hit_die": "d10",
+      "spellcasting_stat": null
+    }
+  ],
+  "alignment": "Lawful Good",
+  "ability_scores": {
+    "STR": 16,
+    "DEX": 12,
+    "CON": 15,
+    "INT": 10,
+    "WIS": 13,
+    "CHA": 8
+  },
+  "skills": {
+    "Acrobatics": false,
+    "Animal Handling": false,
+    "Arcana": false,
+    "Athletics": true,
+    "Deception": false,
+    "History": false,
+    "Insight": false,
+    "Intimidation": true,
+    "Investigation": false,
+    "Medicine": false,
+    "Nature": false,
+    "Perception": true,
+    "Performance": false,
+    "Persuasion": false,
+    "Religion": false,
+    "Sleight of Hand": false,
+    "Stealth": false,
+    "Survival": false
+  },
+  "saving_throws": {
+    "STR": true,
+    "DEX": false,
+    "CON": true,
+    "INT": false,
+    "WIS": false,
+    "CHA": false
+  },
+  "hit_points": {
+    "max": 28,
+    "current": 28
+  },
+  "armor_class": {
+    "value": 16
+  },
+  "speed": {
+    "Walk": 25
+  },
+  "details": {
+    "personality": "I am always polite and respectful. I honor my word above all else.",
+    "ideal": "Honor. My word is my bond.",
+    "bond": "I seek to reclaim my ancestral homeland.",
+    "flaw": "I am stubborn and refuse to change my mind once it's made up."
+  },
+  "weapons": [
+    {
+      "name": "Battleaxe",
+      "attack_bonus": 5,
+      "damage": "1d8+3",
+      "damage_type": "slashing"
+    },
+    {
+      "name": "Handaxe",
+      "attack_bonus": 5,
+      "damage": "1d6+3",
+      "damage_type": "slashing"
+    }
+  ],
+  "spells": []
+}
