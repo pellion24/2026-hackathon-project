@@ -62,16 +62,21 @@
 
                 //const data = await response.json();
                 //resultBox.textContent = data.character_sheet;
-                if (response.headers.get("content-type").includes("application/pdf")) {
-                    const blob = await response.blob();
-                    const url = URL.createObjectURL(blob);
+
+                const data = await response.json();
+
+                if (data.pdf_url) {
+                    // Trigger download
                     const a = document.createElement("a");
-                    a.href = url;
+                    a.href = data.pdf_url;
                     a.download = "character_sheet.pdf";
                     a.click();
-                    URL.revokeObjectURL(url);
+
+                    // Navigate to character page with PDF viewer
+                    window.location.href = `/character?pdf=${data.pdf_url}`;
                     resultBox.textContent = "Done! PDF downloaded.";
-                } else {
+                }
+                else {
                     console.log(response)
                     const data = await response.json();
                     resultBox.textContent = "Error: " + (data.error || "Unknown error");

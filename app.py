@@ -6,6 +6,7 @@ import json
 import tempfile
 import os
 import uvicorn
+import uuid
 from agent import analyze_person
 from dnd_pdf_filler_simple.generate_character import generate_character_sheet
 
@@ -48,13 +49,25 @@ async def analyze(req: Request):
     # 3. Generate PDF
     try:
         pdf_path = generate_character_sheet(temp_json_path, output_folder="/tmp/sheets")
-        return FileResponse(pdf_path, filename=os.path.basename(pdf_path), media_type="application/pdf")
+        final_path = f"/tmp/sheets/{uuid.uuid4()}.pdf"
+        os.rename(pdf_path, final_path)
+        filename = os.path.basename(final_path)
+        return {"pdf_url": f"/pdf/{filename}"}
+        #return FileResponse(pdf_path, filename=os.path.basename(pdf_path), media_type="application/pdf")
     except Exception as e:
         return {"error": "Failed to generate PDF", "details": str(e)}
     finally:
         os.unlink(temp_json_path)
     #return {"character_sheet": result}
 
+
+@app.get("/pdf/{filename}")
+async def serve_pdf(filename: str):
+    return FileResponse(f"/tmp/sheets/{filename}", media_type="application/pdf")
+
+@app.get("/character", response_class=HTMLResponse)
+async def character():
+    return open("character.html").read()
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
