@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head><title>D&D Agent</title></head>
+<head>
+  <title>D&D Agent</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+</head>
 <body>
-  <h1>D&D Character Analyzer</h1>
-  <textarea id="description" rows="5" cols="50" placeholder="Describe a person..."></textarea>
+  <h1 class="unifrakturmaguntia-regular">D&D Character Analyzer</h1>
+  <div class="user-input">
+    <textarea id="description" rows="5" cols="50" placeholder="Describe a person..."></textarea>
+    <button id="submit">Analyze</button>
+  </div>
   <br>
-  <button id="submit">Analyze</button>
   <pre id="result"></pre>
 
   <script>
@@ -21,6 +29,7 @@
       });
 
       const data = await response.json();
+      //console.log(data);
       resultBox.textContent = data.character_sheet;
     });
   </script>

@@ -1,0 +1,5 @@
+anthropic
+chromadb
+sentence-transformers
+fastapi
+uvicorn
