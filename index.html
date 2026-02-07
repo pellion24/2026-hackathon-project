@@ -2,27 +2,49 @@
 <html>
 
 <head>
-    <title>D&D Agent</title>
+    <title>D&D Character Analyzer</title>
     <link rel="stylesheet" href="static/css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Cinzel:wght@400;600;700&family=MedievalSharp&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐉</text></svg>">
 </head>
 
 <body>
 
     <div id="dice-overlay" class="hidden">
-        <img src="static/images/DnD_dice_roll.gif">
+        <img src="static/images/classes/DnD_dice_roll.gif" alt="Rolling dice...">
     </div>
 
     <header>
         <h1 class="unifrakturmaguntia-regular">D&D Character Analyzer</h1>
-        <h4>UGA Hackathon 2026 Submission</h4>
+        <h4>⚔ UGA Hackathon 2026 Submission ⚔</h4>
     </header>
 
     <div class="user-input">
-        <textarea id="description" rows="5" cols="50" placeholder="The magic starts here..."></textarea>
-        <button id="submit">Analyze</button>
+        <textarea id="description" rows="5" cols="50" placeholder="Describe thyself, brave adventurer... What manner of hero art thou?"></textarea>
+        <button id="submit">⚔ Analyze ⚔</button>
+    </div>
+
+    <!-- Test Controls (remove before production) -->
+    <div id="test-controls" style="margin-top: 10px; padding: 10px; background: rgba(255,255,0,0.2); border-radius: 5px;">
+        <label for="test-class">Test Class Display: </label>
+        <select id="test-class">
+            <option value="artificer">Artificer</option>
+            <option value="barbarian">Barbarian</option>
+            <option value="bard">Bard</option>
+            <option value="cleric">Cleric</option>
+            <option value="druid">Druid</option>
+            <option value="fighter">Fighter</option>
+            <option value="monk">Monk</option>
+            <option value="paladin">Paladin</option>
+            <option value="ranger">Ranger</option>
+            <option value="rogue">Rogue</option>
+            <option value="sorcerer">Sorcerer</option>
+            <option value="warlock">Warlock</option>
+            <option value="wizard" selected>Wizard</option>
+        </select>
+        <button id="test-btn">Test</button>
     </div>
 
 
@@ -43,10 +65,14 @@
     <script src="static/js/classDescriptions.js"></script>
     <script>
 
-        const messages = ["Infusing a little magic into your character",
-            "Be honest, you came here after watching Strangers Thing",
-            "Consulting the Elder Scrolls",
-            "Bribing the Dungeon Master"];
+        const messages = [
+            "✨ Consulting the ancient tomes...",
+            "🎲 The dice gods deliberate your fate...",
+            "🔮 Peering into the crystal ball...",
+            "📜 The scribes are writing your legend...",
+            "⚗️ Brewing your destiny in the cauldron...",
+            "🐉 Awakening the dragon of knowledge..."
+        ];
 
         function chooseMessage() {
             const index = Math.floor(Math.random() * messages.length);
@@ -71,13 +97,20 @@
                 classDesc.textContent = "Description not available.";
             }
 
-            // Set the class image (images should be named like: barbarian.png, wizard.png, etc.)
-            classImage.src = `static/images/classes/${classKey}.png`;
-            classImage.alt = `${charClass} Class Image`;
+            // Set the class image (images named like: "Barbarian DND.png", "Wizard DND.png", etc.)
+            const displayName = classData ? classData.name : charClass;
+            classImage.src = `static/images/classes/${displayName} DND.png`;
+            classImage.alt = `${displayName} Class Image`;
 
             // Show the class display section
             classDisplay.classList.remove("hidden");
         }
+
+        // Test button handler
+        document.getElementById("test-btn").addEventListener("click", () => {
+            const selectedClass = document.getElementById("test-class").value;
+            displayClassInfo(selectedClass);
+        });
 
         document.getElementById("submit").addEventListener("click", async () => {
             const description = document.getElementById("description").value;
@@ -112,20 +145,20 @@
                     a.download = "character_sheet.pdf";
                     a.click();
                     URL.revokeObjectURL(url);
-                    resultBox.textContent = "Done! PDF downloaded.";
+                    resultBox.textContent = "✨ Your legend has been forged! Scroll downloaded. ✨";
 
                     // Display the class image and description
                     displayClassInfo(charClass);
                 } else {
                     console.log(response)
                     const data = await response.json();
-                    resultBox.textContent = "Error: " + (data.error || "Unknown error");
+                    resultBox.textContent = "⚠️ The spell fizzled: " + (data.error || "Unknown arcane error");
                     console.log(data);
                 }
 
             } catch (error) {
                 console.error("Backend is down!,", error);
-                resultBox.textContent = "The tavern is closed (Server Error)";
+                resultBox.textContent = "🏚️ The tavern is closed... (The server has fallen to darkness)";
             } finally {
                 overlay.classList.add("hidden");
             }
