@@ -1,0 +1,172 @@
+{
+  "name": "Thorin Ironforge",
+  "player": {
+    "name": "Test Player"
+  },
+  "classes": [
+    {
+      "name": "Fighter",
+      "level": 3,
+      "hit_die": 10
+    }
+  ],
+  "race": {
+    "name": "Mountain Dwarf",
+    "size": "Medium",
+    "speed": 25
+  },
+  "background": {
+    "name": "Soldier",
+    "feature": "Military Rank"
+  },
+  "alignment": "Lawful Neutral",
+  "experience_points": 900,
+  "ability_scores": {
+    "str": 18,
+    "dex": 14,
+    "con": 16,
+    "int": 10,
+    "wis": 12,
+    "cha": 8
+  },
+  "armor_class": {
+    "value": 18,
+    "base": 10,
+    "armor": 8,
+    "shield": 0
+  },
+  "speed": {
+    "Walk": 25,
+    "Fly": 0,
+    "Swim": 0,
+    "Climb": 0,
+    "Burrow": 0
+  },
+  "hit_points": {
+    "max": 31,
+    "current": 31,
+    "temp": 0
+  },
+  "hit_dice": {
+    "total": "3d10",
+    "current": "3"
+  },
+  "inspiration": false,
+  "initiative_bonus": 2,
+  "saving_throws": {
+    "str": false,
+    "dex": false,
+    "con": true,
+    "int": false,
+    "wis": false,
+    "cha": false
+  },
+  "skills": {
+    "Acrobatics": false,
+    "Animal Handling": false,
+    "Arcana": false,
+    "Athletics": true,
+    "Deception": false,
+    "History": false,
+    "Insight": false,
+    "Intimidation": false,
+    "Investigation": false,
+    "Medicine": false,
+    "Nature": false,
+    "Perception": true,
+    "Performance": false,
+    "Persuasion": false,
+    "Religion": false,
+    "Sleight of Hand": false,
+    "Stealth": false,
+    "Survival": false
+  },
+  "proficiencies": [
+    "All simple and martial weapons",
+    "All armor",
+    "Shields",
+    "Smith's tools"
+  ],
+  "languages": [
+    "Common",
+    "Dwarvish"
+  ],
+  "weapons": [
+    {
+      "name": "Longsword",
+      "attack_bonus": 6,
+      "damage": "1d8+4",
+      "damage_type": "slashing"
+    },
+    {
+      "name": "Shield",
+      "attack_bonus": 6,
+      "damage": "1d4+4",
+      "damage_type": "bludgeoning"
+    },
+    {
+      "name": "Crossbow, Light",
+      "attack_bonus": 4,
+      "damage": "1d6+2",
+      "damage_type": "piercing"
+    }
+  ],
+  "currency": {
+    "cp": 0,
+    "sp": 0,
+    "ep": 0,
+    "gp": 47,
+    "pp": 0
+  },
+  "equipment": [
+    "Plate armor",
+    "Shield",
+    "Longsword",
+    "Light crossbow with 20 bolts",
+    "Backpack",
+    "Bedroll",
+    "Mess kit",
+    "Rope (50 feet)",
+    "Tinderbox",
+    "Waterskin",
+    "Rations (10 days)",
+    "Standard adventuring pack"
+  ],
+  "features_and_traits": [
+    "Second Wind: As a bonus action, regain 1d10+3 hit points",
+    "Fighting Style: Defense - +1 to AC while wearing armor",
+    "Action Surge: Take an additional action on turn (once per rest)"
+  ],
+  "feats": [],
+  "traits": [],
+  "ideals": "A well-conducted war is noble",
+  "bonds": "I will always remember my first battle",
+  "flaws": "I have little respect for anyone who is not a proven warrior",
+  "personality": "I am unfailingly loyal to my friends and generous to those in need",
+  "ideal": "Ideals: A well-conducted war is noble",
+  "bond": "Bonds: I will always remember my first battle",
+  "flaw": "Flaws: I have little respect for anyone who is not a proven warrior",
+  "details": {
+    "personality": "I am unfailingly loyal to my friends and generous to those in need",
+    "ideal": "A well-conducted war is noble",
+    "bond": "I will always remember my first battle",
+    "flaw": "I have little respect for anyone who is not a proven warrior"
+  },
+  "backstory": "Born in the Khardad mine of the northern mountains, Thorin learned the ways of combat from his father, the militia captain. After completing three years of service defending the mines from goblin raids, he left to seek his fortune in adventure.",
+  "physical": {
+    "age": 42,
+    "height": "4'3\"",
+    "weight": 150,
+    "eyes": "Brown",
+    "skin": "Ruddy",
+    "hair": "Black with grey streaks"
+  },
+  "allies_and_organizations": "Order of the Sacred Stone - Dwarf military order",
+  "treasure": "None of special value",
+  "faction": {
+    "name": "Order of the Sacred Stone",
+    "rank": "Soldier",
+    "contact": "Captain Durgedak"
+  },
+  "attacks_and_spellcasting": "Longsword: +6 to hit, 1d8+4 slashing. Light Crossbow: +4 to hit, 1d6+2 piercing."
+}

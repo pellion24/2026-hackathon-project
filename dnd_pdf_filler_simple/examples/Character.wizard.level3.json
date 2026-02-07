@@ -1,0 +1,231 @@
+{
+  "name": "Elarion Starweaver",
+  "player": {
+    "name": "Test Player"
+  },
+  "classes": [
+    {
+      "name": "Wizard",
+      "level": 3,
+      "hit_die": 6
+    }
+  ],
+  "race": {
+    "name": "High Elf",
+    "size": "Medium",
+    "speed": 30
+  },
+  "background": {
+    "name": "Sage",
+    "feature": "Researcher"
+  },
+  "alignment": "Chaotic Good",
+  "experience_points": 900,
+  "ability_scores": {
+    "str": 8,
+    "dex": 14,
+    "con": 12,
+    "int": 16,
+    "wis": 13,
+    "cha": 10
+  },
+  "armor_class": {
+    "value": 12,
+    "base": 10,
+    "armor": 0,
+    "shield": 2,
+    "dex_bonus": 2
+  },
+  "speed": {
+    "Walk": 30,
+    "Fly": 0,
+    "Swim": 0,
+    "Climb": 0,
+    "Burrow": 0
+  },
+  "hit_points": {
+    "max": 18,
+    "current": 18,
+    "temp": 0
+  },
+  "hit_dice": {
+    "total": "3d6",
+    "current": "3"
+  },
+  "death_saves": {
+    "successes": 0,
+    "failures": 0
+  },
+  "inspiration": false,
+  "initiative_bonus": 2,
+  "saving_throws": {
+    "str": false,
+    "dex": false,
+    "con": false,
+    "int": true,
+    "wis": true,
+    "cha": false
+  },
+  "skills": {
+    "Acrobatics": false,
+    "Animal Handling": false,
+    "Arcana": true,
+    "Athletics": false,
+    "Deception": false,
+    "History": true,
+    "Insight": false,
+    "Intimidation": false,
+    "Investigation": true,
+    "Medicine": false,
+    "Nature": false,
+    "Perception": false,
+    "Performance": false,
+    "Persuasion": false,
+    "Religion": false,
+    "Sleight of Hand": false,
+    "Stealth": false,
+    "Survival": false
+  },
+  "proficiencies": [
+    "Dagger",
+    "Dart",
+    "Sling",
+    "Quarterstaff",
+    "Light crossbow",
+    "Longsword (Elf racial)"
+  ],
+  "languages": [
+    "Common",
+    "Elvish",
+    "Sylvan"
+  ],
+  "weapons": [
+    {
+      "name": "Dagger",
+      "attack_bonus": 4,
+      "damage": "1d4+2",
+      "damage_type": "piercing"
+    },
+    {
+      "name": "Quarterstaff",
+      "attack_bonus": 1,
+      "damage": "1d6-1",
+      "damage_type": "bludgeoning"
+    }
+  ],
+  "currency": {
+    "cp": 0,
+    "sp": 0,
+    "ep": 0,
+    "gp": 25,
+    "pp": 0
+  },
+  "equipment": [
+    "Quarterstaff",
+    "Dagger (2)",
+    "Component pouch",
+    "Scholar's pack",
+    "Spellbook",
+    "Backpack",
+    "Bedroll",
+    "Candles (10)",
+    "Ink and inkpens",
+    "Paper (sheets)",
+    "Rations (10 days)",
+    "Waterskin"
+  ],
+  "features_and_traits": [
+    "Spellcasting: Cast wizard spells from Intelligence",
+    "Arcane Recovery: Recover 1d6+1 spell levels during short rest",
+    "High Elf Keen Senses: Proficiency in Perception"
+  ],
+  "feats": [],
+  "ideals": "Knowledge is the path to power",
+  "bonds": "My spellbook is my life's work",
+  "flaws": "I struggle to control my curiosity about arcane secrets",
+  "personality": "I speak little, but write constantly in my spellbook",
+  "ideal": "Knowledge is the path to power",
+  "bond": "My spellbook is my life's work",
+  "flaw": "I struggle to control my curiosity about arcane secrets",
+  "details": {
+    "personality": "I speak little, but write constantly in my spellbook",
+    "ideal": "Knowledge is the path to power",
+    "bond": "My spellbook is my life's work",
+    "flaw": "I struggle to control my curiosity about arcane secrets"
+  },
+  "backstory": "Elarion grew up in the Elven city of Silverwind, where she studied the arcane arts at the Tower of Starlight. After mastering the fundamentals of wizardry, she left to explore the wider world and discover new magical secrets.",
+  "physical": {
+    "age": 147,
+    "height": "5'6\"",
+    "weight": 120,
+    "eyes": "Silver",
+    "skin": "Pale",
+    "hair": "Platinum blonde"
+  },
+  "allies_and_organizations": "Tower of Starlight - Elven magical academy",
+  "treasure": "None of special value",
+  "faction": {
+    "name": "Tower of Starlight",
+    "rank": "Apprentice",
+    "contact": "Archmage Elendor"
+  },
+  "attacks_and_spellcasting": "Dagger: +4 to hit, 1d4+2 piercing. Spell Attack: +5. Spell Save DC: 13.",
+  "spellcasting": {
+    "class": "Wizard",
+    "ability": "Intelligence",
+    "spell_save_dc": 13,
+    "spell_attack_bonus": 5,
+    "spell_slots": {
+      "level_1": {
+        "total": 4,
+        "remaining": 4
+      },
+      "level_2": {
+        "total": 2,
+        "remaining": 2
+      }
+    },
+    "cantrips_known": [
+      {
+        "name": "Fire Bolt",
+        "level": 0
+      },
+      {
+        "name": "Mage Hand",
+        "level": 0
+      },
+      {
+        "name": "Prestidigitation",
+        "level": 0
+      }
+    ],
+    "spells_known": [
+      
+      {
+        "name": "Magic Missile",
+        "level": 1,
+        "prepared": true
+      },
+      {
+        "name": "Mage Armor",
+        "level": 1,
+        "prepared": true
+      },
+      {
+        "name": "Sleep",
+        "level": 1,
+        "prepared": false
+      },
+      {
+        "name": "Ray of Sickness",
+        "level": 1,
+        "prepared": false
+      },
+      {
+        "name": "Scorching Ray",
+        "level": 2,
+        "prepared": true
+      }
+    ]
+  }
+}
