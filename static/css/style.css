@@ -1,22 +1,92 @@
+/* CSS Variables for consistent theming */
+:root {
+    --parchment-light: #f4e4bc;
+    --parchment-dark: #d4b896;
+    --gold: #c9a227;
+    --gold-light: #e6c65c;
+    --gold-dark: #8b6914;
+    --dragon-red: #8b0000;
+    --dragon-red-light: #b22222;
+    --blood-red: #660000;
+    --dark-leather: #2c1810;
+    --leather: #4a3728;
+    --ink-black: #1a1a1a;
+    --mystical-purple: #4a0080;
+    --arcane-blue: #1a3a5c;
+    --shadow: rgba(0, 0, 0, 0.5);
+}
+
 body {
-    background-color: slategray;
+    background-color: var(--leather);
 }
 
 h1 {
 }
 
 header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    text-align: center;
+    position: relative;
 }
 
-button {}
+header h1 {
+    font-size: 3.5rem;
+    color: var(--gold);
+    text-shadow:
+            3px 3px 6px rgba(0,0,0,0.8),
+            0 0 30px rgba(201, 162, 39, 0.3);
+}
+
+header h4 {
+    font-size: 1.5rem;
+    color: var(--parchment-dark);
+}
+
+button {
+    margin-top: 20px;
+    background: var(--blood-red);
+    color: var(--parchment-light);
+    border: 3px solid var(--leather);
+    border-radius: 8px;
+    font-family: "UnifrakturMaguntia", cursive;
+    font-size: large;
+
+}
+
+textarea {
+    width: 100%;
+    max-width: 550px;
+    min-height: 120px;
+    padding: 20px;
+    color: var(--ink-black);
+    background:
+        linear-gradient(to bottom, var(--parchment-light), var(--parchment-dark));
+    border: 2px solid var(--gold-dark);
+    border-radius: 8px;
+    resize: vertical;
+    font-family: "Uncial Antiqua";
+    transition: all 0.3s ease;
+
+}
+
+#result {
+    font-family: "UnifrakturMaguntia", cursive;
+    text-align: center;
+    color: var(--parchment-light)
+
+}
 
 .user-input{
     display:flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 700px;
+    background:
+            linear-gradient(135deg, rgba(74, 55, 40, 0.9), rgba(44, 24, 16, 0.95));
+    border: 3px solid var(--gold-dark);
+    border-radius: 15px;
+    position: relative;
 }
 
 .loading::after {
@@ -50,6 +120,12 @@ button {}
 
 .unifrakturmaguntia-regular {
     font-family: "UnifrakturMaguntia", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.uncial-antiqua-regular {
+    font-family: "Uncial Antiqua", system-ui;
     font-weight: 400;
     font-style: normal;
 }

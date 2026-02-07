@@ -1,12 +1,78 @@
-body {
-    background-color: slategray;
+:root {
+    --parchment-light: #f4e4bc;
+    --parchment-dark: #d4b896;
+    --gold: #c9a227;
+    --gold-light: #e6c65c;
+    --gold-dark: #8b6914;
+    --dragon-red: #8b0000;
+    --dragon-red-light: #b22222;
+    --blood-red: #660000;
+    --dark-leather: #2c1810;
+    --leather: #4a3728;
+    --ink-black: #1a1a1a;
+    --mystical-purple: #4a0080;
+    --arcane-blue: #1a3a5c;
+    --shadow: rgba(0, 0, 0, 0.5);
+}
 
+body {
+    background-color: var(--leather);
+
+}
+header {
+    text-align: center;
+    position: relative;
+}
+
+header h1 {
+    font-size: 3.5rem;
+    color: var(--gold);
+    text-shadow:
+            3px 3px 6px rgba(0,0,0,0.8),
+            0 0 30px rgba(201, 162, 39, 0.3);
 }
 
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
+
+section {
+
+    margin: 10px;
+
+}
+
+.card {
+    margin: 20px;
+    padding-left: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+    background: var(--parchment-dark);
+}
+
+section h2 {
+    color: var(--gold);
+    text-shadow:
+            3px 3px 6px rgba(0,0,0,0.8),
+            0 0 30px rgba(201, 162, 39, 0.3);v
+}
+
+.offical-art {
+
+}
+
+.backstory {
+
+
+}
+
+.character-info {
+
+
+}
+
 
 
 .unifrakturmaguntia-regular {
