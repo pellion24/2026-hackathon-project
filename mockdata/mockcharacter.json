@@ -1,6 +1,7 @@
 {
   "name": "Grog the Bold",
   "class": "Barbarian",
+  "race": "Human",
   "stats": {"str": 18, "dex": 12, "con": 16},
   "backstory": "Born in the frozen tundras..."
 }
