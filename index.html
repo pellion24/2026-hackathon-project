@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>D&D Character Analyzer</title>
+    <title>D&D Character Creator</title>
     <link rel="stylesheet" href="static/css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,27 +12,114 @@
 
 <body>
 
+    <!-- Vignette overlay -->
+    <div class="vignette"></div>
+
+    <!-- Corner sword decorations -->
+    <div class="corner-sword top-left">⚔</div>
+    <div class="corner-sword top-right">⚔</div>
+    <div class="corner-sword bottom-left">⚔</div>
+    <div class="corner-sword bottom-right">⚔</div>
+
+    <!-- Floating particles/embers effect -->
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <!-- Left Side Class Icons Column -->
+    <div class="side-icons left-icons">
+        <img src="static/images/classes/Class Icon - Artificer.svg" alt="Artificer">
+        <img src="static/images/classes/Class Icon - Barbarian.svg" alt="Barbarian">
+        <img src="static/images/classes/Class Icon - Bard.svg" alt="Bard">
+        <img src="static/images/classes/Class Icon - Cleric.svg" alt="Cleric">
+        <img src="static/images/classes/Class Icon - Druid.svg" alt="Druid">
+        <img src="static/images/classes/Class Icon - Fighter.svg" alt="Fighter">
+        <img src="static/images/classes/Class Icon - Monk.svg" alt="Monk">
+        <img src="static/images/classes/Class Icon - Paladin.svg" alt="Paladin">
+        <img src="static/images/classes/Class Icon - Ranger.svg" alt="Ranger">
+        <img src="static/images/classes/Class Icon - Rogue.svg" alt="Rogue">
+        <img src="static/images/classes/Class Icon - Sorcerer.svg" alt="Sorcerer">
+        <img src="static/images/classes/Class Icon - Warlock.svg" alt="Warlock">
+        <img src="static/images/classes/Class Icon - Wizard.svg" alt="Wizard">
+        <!-- Repeat for seamless loop -->
+        <img src="static/images/classes/Class Icon - Artificer.svg" alt="Artificer">
+        <img src="static/images/classes/Class Icon - Barbarian.svg" alt="Barbarian">
+        <img src="static/images/classes/Class Icon - Bard.svg" alt="Bard">
+        <img src="static/images/classes/Class Icon - Cleric.svg" alt="Cleric">
+        <img src="static/images/classes/Class Icon - Druid.svg" alt="Druid">
+        <img src="static/images/classes/Class Icon - Fighter.svg" alt="Fighter">
+        <img src="static/images/classes/Class Icon - Monk.svg" alt="Monk">
+        <img src="static/images/classes/Class Icon - Paladin.svg" alt="Paladin">
+        <img src="static/images/classes/Class Icon - Ranger.svg" alt="Ranger">
+        <img src="static/images/classes/Class Icon - Rogue.svg" alt="Rogue">
+        <img src="static/images/classes/Class Icon - Sorcerer.svg" alt="Sorcerer">
+        <img src="static/images/classes/Class Icon - Warlock.svg" alt="Warlock">
+        <img src="static/images/classes/Class Icon - Wizard.svg" alt="Wizard">
+    </div>
+
+    <!-- Right Side Class Icons Column -->
+    <div class="side-icons right-icons">
+        <img src="static/images/classes/Class Icon - Wizard.svg" alt="Wizard">
+        <img src="static/images/classes/Class Icon - Warlock.svg" alt="Warlock">
+        <img src="static/images/classes/Class Icon - Sorcerer.svg" alt="Sorcerer">
+        <img src="static/images/classes/Class Icon - Rogue.svg" alt="Rogue">
+        <img src="static/images/classes/Class Icon - Ranger.svg" alt="Ranger">
+        <img src="static/images/classes/Class Icon - Paladin.svg" alt="Paladin">
+        <img src="static/images/classes/Class Icon - Monk.svg" alt="Monk">
+        <img src="static/images/classes/Class Icon - Fighter.svg" alt="Fighter">
+        <img src="static/images/classes/Class Icon - Druid.svg" alt="Druid">
+        <img src="static/images/classes/Class Icon - Cleric.svg" alt="Cleric">
+        <img src="static/images/classes/Class Icon - Bard.svg" alt="Bard">
+        <img src="static/images/classes/Class Icon - Barbarian.svg" alt="Barbarian">
+        <img src="static/images/classes/Class Icon - Artificer.svg" alt="Artificer">
+        <!-- Repeat for seamless loop -->
+        <img src="static/images/classes/Class Icon - Wizard.svg" alt="Wizard">
+        <img src="static/images/classes/Class Icon - Warlock.svg" alt="Warlock">
+        <img src="static/images/classes/Class Icon - Sorcerer.svg" alt="Sorcerer">
+        <img src="static/images/classes/Class Icon - Rogue.svg" alt="Rogue">
+        <img src="static/images/classes/Class Icon - Ranger.svg" alt="Ranger">
+        <img src="static/images/classes/Class Icon - Paladin.svg" alt="Paladin">
+        <img src="static/images/classes/Class Icon - Monk.svg" alt="Monk">
+        <img src="static/images/classes/Class Icon - Fighter.svg" alt="Fighter">
+        <img src="static/images/classes/Class Icon - Druid.svg" alt="Druid">
+        <img src="static/images/classes/Class Icon - Cleric.svg" alt="Cleric">
+        <img src="static/images/classes/Class Icon - Bard.svg" alt="Bard">
+        <img src="static/images/classes/Class Icon - Barbarian.svg" alt="Barbarian">
+        <img src="static/images/classes/Class Icon - Artificer.svg" alt="Artificer">
+    </div>
+
     <div id="dice-overlay" class="hidden">
         <img src="static/images/classes/DnD_dice_roll.gif" alt="Rolling dice...">
     </div>
 
     <header>
-        <h1 class="unifrakturmaguntia-regular">D&D Character Analyzer</h1>
+        <h1 class="unifrakturmaguntia-regular">D&D Character Creator</h1>
         <h4>⚔ UGA Hackathon 2026 Submission ⚔</h4>
     </header>
 
     <div class="user-input">
         <textarea id="description" rows="5" cols="50" placeholder="Describe thyself, brave adventurer... What manner of hero art thou?"></textarea>
-        <button id="submit">⚔ Analyze ⚔</button>
+        <button id="submit">⚔ Create ⚔</button>
     </div>
 
     <!-- Test Controls (remove before production) -->
-    <div id="test-controls" style="margin-top: 10px; padding: 10px; background: rgba(255,255,0,0.2); border-radius: 5px;">
+    <div id="test-controls">
         <label for="test-class">Test Class Display: </label>
         <select id="test-class">
             <option value="artificer">Artificer</option>
             <option value="barbarian">Barbarian</option>
-            <option value="bard">Bard</option>
+            <option value="bard" selected>Bard</option>
             <option value="cleric">Cleric</option>
             <option value="druid">Druid</option>
             <option value="fighter">Fighter</option>
@@ -42,7 +129,7 @@
             <option value="rogue">Rogue</option>
             <option value="sorcerer">Sorcerer</option>
             <option value="warlock">Warlock</option>
-            <option value="wizard" selected>Wizard</option>
+            <option value="wizard">Wizard</option>
         </select>
         <button id="test-btn">Test</button>
     </div>
@@ -59,6 +146,33 @@
         <div class="class-description-container">
             <h2 id="class-name" class="unifrakturmaguntia-regular"></h2>
             <p id="class-description"></p>
+        </div>
+    </div>
+
+    <!-- Character Info Section -->
+    <div id="character-info" class="hidden">
+        <div class="character-header">
+            <h2 id="character-name" class="unifrakturmaguntia-regular"></h2>
+            <div class="character-details">
+                <span class="detail-item"><strong>Race:</strong> <span id="char-race"></span></span>
+                <span class="detail-divider">|</span>
+                <span class="detail-item"><strong>Background:</strong> <span id="char-background"></span></span>
+            </div>
+        </div>
+        <div class="backstory-container">
+            <h3>📜 Backstory</h3>
+            <p id="char-backstory"></p>
+        </div>
+    </div>
+
+    <!-- PDF Viewer Section -->
+    <div id="pdf-viewer-section" class="hidden">
+        <h3 class="pdf-title unifrakturmaguntia-regular">⚔ Character Sheet ⚔</h3>
+        <div class="pdf-container">
+            <embed id="pdf-viewer" src="" type="application/pdf">
+        </div>
+        <div class="pdf-download-fallback">
+            <a id="pdf-download-link" href="" download="character_sheet.pdf">📜 Download Character Sheet PDF</a>
         </div>
     </div>
 
@@ -106,10 +220,59 @@
             classDisplay.classList.remove("hidden");
         }
 
+        // Display character info function
+        function displayCharacterInfo(charData) {
+            const charInfo = document.getElementById("character-info");
+            document.getElementById("character-name").textContent = charData.name;
+            document.getElementById("char-race").textContent = charData.race;
+            document.getElementById("char-background").textContent = charData.background;
+            document.getElementById("char-backstory").textContent = charData.backstory;
+            charInfo.classList.remove("hidden");
+        }
+
+        // Display PDF viewer function
+        function displayPdfViewer(pdfUrl) {
+            const pdfSection = document.getElementById("pdf-viewer-section");
+            const pdfViewer = document.getElementById("pdf-viewer");
+            const downloadLink = document.getElementById("pdf-download-link");
+            
+            // Add timestamp to bust cache
+            const urlWithTimestamp = pdfUrl + "?t=" + Date.now();
+            pdfViewer.src = urlWithTimestamp;
+            downloadLink.href = urlWithTimestamp;
+            pdfSection.classList.remove("hidden");
+        }
+
+        // Test bard example data
+        const testBardData = {
+            name: "Silvius Nightwhisper",
+            race: "Half-Elf",
+            background: "Charlatan",
+            backstory: "Silvius learned early that a silver tongue and quick thinking could open more doors than brute force. He uses his natural charisma and perfect memory to weave elaborate deceptions that help those in need, though his methods often blur the line between right and wrong."
+        };
+
         // Test button handler
         document.getElementById("test-btn").addEventListener("click", () => {
             const selectedClass = document.getElementById("test-class").value;
             displayClassInfo(selectedClass);
+
+            // If bard is selected, also show character info and PDF
+            if (selectedClass === "bard") {
+                displayCharacterInfo(testBardData);
+                displayPdfViewer("static/SilviusNightwhisper_Level3.pdf");
+            }
+        });
+
+        // Add a dedicated test button for full bard example
+        const testFullBardBtn = document.createElement("button");
+        testFullBardBtn.id = "test-full-bard";
+        testFullBardBtn.textContent = "Test Full Bard Example";
+        document.getElementById("test-controls").appendChild(testFullBardBtn);
+
+        testFullBardBtn.addEventListener("click", () => {
+            displayClassInfo("bard");
+            displayCharacterInfo(testBardData);
+            displayPdfViewer("static/SilviusNightwhisper_Level3.pdf");
         });
 
         document.getElementById("submit").addEventListener("click", async () => {

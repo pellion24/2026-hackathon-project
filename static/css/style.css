@@ -41,25 +41,56 @@ body {
     overflow-x: hidden;
 }
 
-/* Decorative corner flourishes for the page */
-body::before,
-body::after {
-    content: '⚔';
+/* Vignette overlay effect */
+.vignette {
     position: fixed;
-    font-size: 3rem;
-    color: var(--gold);
-    opacity: 0.3;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at center, transparent 40%, rgba(0, 0, 0, 0.5) 100%);
     pointer-events: none;
+    z-index: 0;
 }
 
-body::before {
+/* Decorative corner swords */
+.corner-sword {
+    position: fixed;
+    font-size: 2.5rem;
+    color: var(--gold);
+    opacity: 0.4;
+    pointer-events: none;
+    z-index: 2;
+    text-shadow: 0 0 15px rgba(201, 162, 39, 0.5);
+    animation: swordGlow 3s ease-in-out infinite;
+}
+
+.corner-sword.top-left {
     top: 20px;
-    left: 20px;
+    left: 25px;
 }
 
-body::after {
+.corner-sword.top-right {
+    top: 20px;
+    right: 25px;
+    transform: scaleX(-1);
+}
+
+.corner-sword.bottom-left {
     bottom: 20px;
-    right: 20px;
+    left: 25px;
+    transform: scaleY(-1);
+}
+
+.corner-sword.bottom-right {
+    bottom: 20px;
+    right: 25px;
+    transform: scale(-1, -1);
+}
+
+@keyframes swordGlow {
+    0%, 100% { opacity: 0.3; text-shadow: 0 0 10px rgba(201, 162, 39, 0.3); }
+    50% { opacity: 0.6; text-shadow: 0 0 25px rgba(201, 162, 39, 0.7); }
 }
 
 /* Main container */
@@ -430,6 +461,187 @@ button:active {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
+/* ===== CHARACTER INFO SECTION ===== */
+#character-info {
+    margin: 40px auto;
+    padding: 40px;
+    max-width: 750px;
+    background: 
+        linear-gradient(135deg, rgba(44, 24, 16, 0.95), rgba(74, 55, 40, 0.9), rgba(44, 24, 16, 0.95));
+    border: 4px solid var(--gold-dark);
+    border-radius: 20px;
+    box-shadow: 
+        0 15px 50px rgba(0, 0, 0, 0.6),
+        inset 0 0 100px rgba(0, 0, 0, 0.3),
+        0 0 80px rgba(139, 0, 0, 0.2);
+    position: relative;
+}
+
+#character-info::before,
+#character-info::after {
+    content: '◆';
+    position: absolute;
+    font-size: 1.5rem;
+    color: var(--gold);
+}
+
+#character-info::before {
+    top: 15px;
+    left: 15px;
+}
+
+#character-info::after {
+    bottom: 15px;
+    right: 15px;
+}
+
+.character-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.character-header h2 {
+    font-size: 2.5rem;
+    color: var(--gold);
+    margin-bottom: 15px;
+    text-shadow: 
+        3px 3px 6px rgba(0, 0, 0, 0.8),
+        0 0 20px rgba(201, 162, 39, 0.3);
+    letter-spacing: 2px;
+}
+
+.character-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.detail-item {
+    font-family: 'MedievalSharp', cursive;
+    font-size: 1.1rem;
+    color: var(--parchment-light);
+}
+
+.detail-item strong {
+    color: var(--gold-light);
+}
+
+.detail-divider {
+    color: var(--gold);
+    font-weight: bold;
+}
+
+.backstory-container {
+    padding: 25px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    border: 2px solid rgba(201, 162, 39, 0.3);
+    position: relative;
+}
+
+.backstory-container h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.4rem;
+    color: var(--gold);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.backstory-container p {
+    font-family: 'MedievalSharp', cursive;
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: var(--parchment-light);
+    text-align: justify;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* ===== PDF VIEWER SECTION ===== */
+#pdf-viewer-section {
+    margin: 40px auto;
+    padding: 30px;
+    max-width: 900px;
+    background: 
+        linear-gradient(135deg, rgba(44, 24, 16, 0.95), rgba(74, 55, 40, 0.9), rgba(44, 24, 16, 0.95));
+    border: 4px solid var(--gold-dark);
+    border-radius: 20px;
+    box-shadow: 
+        0 15px 50px rgba(0, 0, 0, 0.6),
+        inset 0 0 100px rgba(0, 0, 0, 0.3),
+        0 0 80px rgba(139, 0, 0, 0.2);
+    position: relative;
+}
+
+.pdf-title {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--gold);
+    margin-bottom: 20px;
+    text-shadow: 
+        3px 3px 6px rgba(0, 0, 0, 0.8),
+        0 0 20px rgba(201, 162, 39, 0.3);
+}
+
+.pdf-container {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.5),
+        inset 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+#pdf-viewer {
+    width: 100%;
+    height: 800px;
+    border: none;
+}
+
+.pdf-download-fallback {
+    text-align: center;
+    margin-top: 20px;
+    padding: 15px;
+}
+
+.pdf-download-fallback a {
+    display: inline-block;
+    padding: 15px 30px;
+    background: linear-gradient(180deg, var(--gold), var(--gold-dark));
+    color: var(--ink-black);
+    text-decoration: none;
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    border: 2px solid var(--gold-dark);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.pdf-download-fallback a:hover {
+    background: linear-gradient(180deg, var(--gold-light), var(--gold));
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(201, 162, 39, 0.4);
+}
+
+#character-info:not(.hidden),
+#pdf-viewer-section:not(.hidden) {
+    animation: revealSection 0.6s ease-out;
+}
+
+@keyframes revealSection {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Test Controls (styled to match theme) */
 #test-controls {
     margin: 20px auto;
@@ -462,6 +674,19 @@ button:active {
     font-size: 0.9rem;
     margin-top: 10px;
     margin-left: 10px;
+}
+
+#test-full-bard {
+    display: block;
+    margin: 10px auto 0 auto;
+    padding: 10px 25px;
+    background: linear-gradient(180deg, var(--dragon-red), var(--blood-red));
+    border: 2px solid var(--gold);
+}
+
+#test-full-bard:hover {
+    background: linear-gradient(180deg, var(--dragon-red-light), var(--dragon-red));
+    transform: scale(1.05);
 }
 
 /* Scrollbar Styling */
@@ -511,6 +736,41 @@ button:active {
     .class-description-container h2 {
         font-size: 1.8rem;
     }
+
+    #character-info {
+        margin: 20px 15px;
+        padding: 25px;
+    }
+
+    .character-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .character-details {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .detail-divider {
+        display: none;
+    }
+
+    .backstory-container {
+        padding: 15px;
+    }
+
+    #pdf-viewer-section {
+        margin: 20px 15px;
+        padding: 20px;
+    }
+
+    .pdf-title {
+        font-size: 1.5rem;
+    }
+
+    #pdf-viewer {
+        height: 500px;
+    }
 }
 
 /* Magical sparkle effect (optional enhancement) */
@@ -527,4 +787,168 @@ button:active {
 
 #class-display:not(.hidden) {
     animation: fadeIn 0.6s ease-out;
+}
+
+/* ===== FLOATING PARTICLES/EMBERS EFFECT ===== */
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: radial-gradient(circle, var(--gold-light), var(--gold), transparent);
+    border-radius: 50%;
+    opacity: 0;
+    animation: floatUp 8s ease-in infinite;
+}
+
+.particle:nth-child(1) { left: 10%; animation-delay: 0s; animation-duration: 10s; }
+.particle:nth-child(2) { left: 25%; animation-delay: 2s; animation-duration: 12s; }
+.particle:nth-child(3) { left: 40%; animation-delay: 4s; animation-duration: 8s; }
+.particle:nth-child(4) { left: 55%; animation-delay: 1s; animation-duration: 11s; }
+.particle:nth-child(5) { left: 70%; animation-delay: 3s; animation-duration: 9s; }
+.particle:nth-child(6) { left: 85%; animation-delay: 5s; animation-duration: 13s; }
+.particle:nth-child(7) { left: 15%; animation-delay: 6s; animation-duration: 10s; }
+.particle:nth-child(8) { left: 60%; animation-delay: 7s; animation-duration: 11s; }
+.particle:nth-child(9) { left: 30%; animation-delay: 1.5s; animation-duration: 14s; }
+.particle:nth-child(10) { left: 75%; animation-delay: 4.5s; animation-duration: 9s; }
+.particle:nth-child(11) { left: 50%; animation-delay: 2.5s; animation-duration: 12s; }
+.particle:nth-child(12) { left: 90%; animation-delay: 6.5s; animation-duration: 10s; }
+
+@keyframes floatUp {
+    0% {
+        bottom: -10px;
+        opacity: 0;
+        transform: translateX(0) scale(0.5);
+    }
+    10% {
+        opacity: 0.8;
+    }
+    90% {
+        opacity: 0.6;
+    }
+    100% {
+        bottom: 100vh;
+        opacity: 0;
+        transform: translateX(100px) scale(1.2);
+    }
+}
+
+/* ===== SIDE CLASS ICONS COLUMNS ===== */
+.side-icons {
+    position: fixed;
+    top: 0;
+    width: 120px;
+    height: 200%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 20px 15px;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.left-icons {
+    left: 15px;
+    animation: scrollDown 45s linear infinite;
+}
+
+.right-icons {
+    right: 15px;
+    animation: scrollUp 45s linear infinite;
+}
+
+.side-icons img {
+    width: 75px;
+    height: 75px;
+    opacity: 0.5;
+    filter: 
+        drop-shadow(0 0 8px var(--gold))
+        drop-shadow(0 0 15px rgba(201, 162, 39, 0.3))
+        brightness(1.5)
+        sepia(0.2);
+    transition: all 0.4s ease;
+    pointer-events: auto;
+}
+
+.side-icons img:hover {
+    opacity: 1;
+    transform: scale(1.4) rotate(15deg);
+    filter: 
+        drop-shadow(0 0 20px var(--gold))
+        drop-shadow(0 0 40px rgba(201, 162, 39, 0.6))
+        brightness(2.2)
+        sepia(0);
+}
+
+/* Flowing animation - scrolling down */
+@keyframes scrollDown {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-50%);
+    }
+}
+
+/* Flowing animation - scrolling up */
+@keyframes scrollUp {
+    0% {
+        transform: translateY(-50%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Staggered float effect for individual icons */
+.side-icons img:nth-child(odd) {
+    animation: floatIcon 5s ease-in-out infinite;
+}
+
+.side-icons img:nth-child(even) {
+    animation: floatIcon 5s ease-in-out infinite reverse;
+}
+
+@keyframes floatIcon {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(12px);
+    }
+}
+
+/* Hide side icons on smaller screens */
+@media (max-width: 1200px) {
+    .side-icons {
+        width: 90px;
+    }
+    .side-icons img {
+        width: 55px;
+        height: 55px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .side-icons {
+        display: none;
+    }
+}
+
+/* Glowing text selection */
+::selection {
+    background: var(--gold-dark);
+    color: var(--parchment-light);
+    text-shadow: 0 0 10px var(--gold);
 }

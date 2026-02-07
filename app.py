@@ -72,5 +72,27 @@ async def analyze(req: Request):
     #return {"character_sheet": result}
 
 
+@app.get("/test-bard-pdf")
+async def test_bard_pdf():
+    """Generate and serve the bard character sheet PDF for testing"""
+    import pathlib
+    
+    # Use pathlib for cross-platform path handling
+    base_dir = pathlib.Path(__file__).parent
+    json_path = base_dir / "dnd_pdf_filler_simple" / "examples" / "Character.bard.level3.json"
+    output_folder = base_dir / "dnd_pdf_filler_simple" / "generated_character_sheets"
+    
+    try:
+        pdf_path = generate_character_sheet(str(json_path), output_folder=str(output_folder))
+        return FileResponse(
+            path=pdf_path,
+            media_type="application/pdf",
+            filename="SilviusNightwhisper_Level3.pdf"
+        )
+    except Exception as e:
+        import traceback
+        return {"error": "Failed to generate PDF", "details": str(e), "traceback": traceback.format_exc()}
+
+
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
