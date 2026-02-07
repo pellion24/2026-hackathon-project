@@ -34,25 +34,184 @@ def fmt(value):
 # ============================================================================
 # SPELL FIELD MAPPING  (official WotC 5e fillable PDF)
 # ============================================================================
-_ALL_SPELL_FIELDS = (
-    [f"Spells 1010{i}" for i in range(10)] +      # indices 0-9
-    [f"Spells {1014 + i}" for i in range(86)] +    # indices 10-95
-    [f"Spells 10101{i}" for i in range(4)]          # indices 96-99
-)
 
-# (start_index, count) for each spell-level section in the PDF.
-_SPELL_SECTION = {
-    0: (0,  8),   # Cantrips
-    1: (8,  12),  # Level 1
-    2: (20, 13),  # Level 2
-    3: (33, 13),  # Level 3
-    4: (46, 13),  # Level 4
-    5: (59, 9),   # Level 5
-    6: (68, 9),   # Level 6
-    7: (77, 9),   # Level 7
-    8: (86, 7),   # Level 8
-    9: (93, 7),   # Level 9
+# Cantrip fields (level 0) - NO prepared checkboxes
+_CANTRIP_FIELDS = [
+    "Spells 1014",
+    "Spells 1016",
+    "Spells 1017",
+    "Spells 1018",
+    "Spells 1019",
+    "Spells 1020",
+    "Spells 1021",
+    "Spells 1022",
+]
+
+# Spell name fields by level (1-9)
+_SPELL_FIELDS_BY_LEVEL = {
+    1: [
+        "Spells 1015", "Spells 1023", "Spells 1024", "Spells 1025",
+        "Spells 1026", "Spells 1027", "Spells 1028", "Spells 1029",
+        "Spells 1030", "Spells 1031", "Spells 1032", "Spells 1033",
+    ],
+    2: [
+        "Spells 1046", "Spells 1034", "Spells 1035", "Spells 1036",
+        "Spells 1037", "Spells 1038", "Spells 1039", "Spells 1040",
+        "Spells 1041", "Spells 1042", "Spells 1043", "Spells 1044",
+        "Spells 1045",
+    ],
+    3: [
+        "Spells 1048", "Spells 1047", "Spells 1049", "Spells 1050",
+        "Spells 1051", "Spells 1052", "Spells 1053", "Spells 1054",
+        "Spells 1055", "Spells 1056", "Spells 1057", "Spells 1058",
+        "Spells 1059",
+    ],
+    4: [
+        "Spells 1061", "Spells 1060", "Spells 1062", "Spells 1063",
+        "Spells 1064", "Spells 1065", "Spells 1066", "Spells 1067",
+        "Spells 1068", "Spells 1069", "Spells 1070", "Spells 1071",
+        "Spells 1072",
+    ],
+    5: [
+        "Spells 1074", "Spells 1073", "Spells 1075", "Spells 1076",
+        "Spells 1077", "Spells 1078", "Spells 1079", "Spells 1080",
+        "Spells 1081",
+    ],
+    6: [
+        "Spells 1083", "Spells 1082", "Spells 1084", "Spells 1085",
+        "Spells 1086", "Spells 1087", "Spells 1088", "Spells 1089",
+        "Spells 1090",
+    ],
+    7: [
+        "Spells 1092", "Spells 1091", "Spells 1093", "Spells 1094",
+        "Spells 1095", "Spells 1096", "Spells 1097", "Spells 1098",
+        "Spells 1099",
+    ],
+    8: [
+        "Spells 10101", "Spells 10100", "Spells 10102", "Spells 10103",
+        "Spells 10104", "Spells 10105", "Spells 10106",
+    ],
+    9: [
+        "Spells 10108", "Spells 10107", "Spells 10109", "Spells 101010",
+        "Spells 101011", "Spells 101012", "Spells 101013",
+    ],
 }
+
+# Spell name field -> prepared checkbox field mapping
+_SPELL_FIELD_TO_PREP_CHECKBOX = {
+    # Level 1 lines
+    "Spells 1015":  "Check Box 251",
+    "Spells 1023":  "Check Box 309",
+    "Spells 1024":  "Check Box 3010",
+    "Spells 1025":  "Check Box 3011",
+    "Spells 1026":  "Check Box 3012",
+    "Spells 1027":  "Check Box 3013",
+    "Spells 1028":  "Check Box 3014",
+    "Spells 1029":  "Check Box 3015",
+    "Spells 1030":  "Check Box 3016",
+    "Spells 1031":  "Check Box 3017",
+    "Spells 1032":  "Check Box 3018",
+    "Spells 1033":  "Check Box 3019",
+
+    # Level 2 lines
+    "Spells 1046":  "Check Box 313",
+    "Spells 1034":  "Check Box 310",
+    "Spells 1035":  "Check Box 3020",
+    "Spells 1036":  "Check Box 3021",
+    "Spells 1037":  "Check Box 3022",
+    "Spells 1038":  "Check Box 3023",
+    "Spells 1039":  "Check Box 3024",
+    "Spells 1040":  "Check Box 3025",
+    "Spells 1041":  "Check Box 3026",
+    "Spells 1042":  "Check Box 3027",
+    "Spells 1043":  "Check Box 3028",
+    "Spells 1044":  "Check Box 3029",
+    "Spells 1045":  "Check Box 3030",
+
+    # Level 3 lines
+    "Spells 1048":  "Check Box 315",
+    "Spells 1047":  "Check Box 314",
+    "Spells 1049":  "Check Box 3031",
+    "Spells 1050":  "Check Box 3032",
+    "Spells 1051":  "Check Box 3033",
+    "Spells 1052":  "Check Box 3034",
+    "Spells 1053":  "Check Box 3035",
+    "Spells 1054":  "Check Box 3036",
+    "Spells 1055":  "Check Box 3037",
+    "Spells 1056":  "Check Box 3038",
+    "Spells 1057":  "Check Box 3039",
+    "Spells 1058":  "Check Box 3040",
+    "Spells 1059":  "Check Box 3041",
+
+    # Level 4 lines
+    "Spells 1061":  "Check Box 317",
+    "Spells 1060":  "Check Box 316",
+    "Spells 1062":  "Check Box 3042",
+    "Spells 1063":  "Check Box 3043",
+    "Spells 1064":  "Check Box 3044",
+    "Spells 1065":  "Check Box 3045",
+    "Spells 1066":  "Check Box 3046",
+    "Spells 1067":  "Check Box 3047",
+    "Spells 1068":  "Check Box 3048",
+    "Spells 1069":  "Check Box 3049",
+    "Spells 1070":  "Check Box 3050",
+    "Spells 1071":  "Check Box 3051",
+    "Spells 1072":  "Check Box 3052",
+
+    # Level 5 lines
+    "Spells 1074":  "Check Box 319",
+    "Spells 1073":  "Check Box 318",
+    "Spells 1075":  "Check Box 3053",
+    "Spells 1076":  "Check Box 3054",
+    "Spells 1077":  "Check Box 3055",
+    "Spells 1078":  "Check Box 3056",
+    "Spells 1079":  "Check Box 3057",
+    "Spells 1080":  "Check Box 3058",
+    "Spells 1081":  "Check Box 3059",
+
+    # Level 6 lines
+    "Spells 1083":  "Check Box 321",
+    "Spells 1082":  "Check Box 320",
+    "Spells 1084":  "Check Box 3060",
+    "Spells 1085":  "Check Box 3061",
+    "Spells 1086":  "Check Box 3062",
+    "Spells 1087":  "Check Box 3063",
+    "Spells 1088":  "Check Box 3064",
+    "Spells 1089":  "Check Box 3065",
+    "Spells 1090":  "Check Box 3066",
+
+    # Level 7 lines
+    "Spells 1092":  "Check Box 323",
+    "Spells 1091":  "Check Box 322",
+    "Spells 1093":  "Check Box 3067",
+    "Spells 1094":  "Check Box 3068",
+    "Spells 1095":  "Check Box 3069",
+    "Spells 1096":  "Check Box 3070",
+    "Spells 1097":  "Check Box 3071",
+    "Spells 1098":  "Check Box 3072",
+    "Spells 1099":  "Check Box 3073",
+
+    # Level 8 lines
+    "Spells 10101": "Check Box 325",
+    "Spells 10100": "Check Box 324",
+    "Spells 10102": "Check Box 3074",
+    "Spells 10103": "Check Box 3075",
+    "Spells 10104": "Check Box 3076",
+    "Spells 10105": "Check Box 3077",
+    "Spells 10106": "Check Box 3078",
+
+    # Level 9 lines
+    "Spells 10108": "Check Box 327",
+    "Spells 10107": "Check Box 326",
+    "Spells 10109": "Check Box 3079",
+    "Spells 101010": "Check Box 3080",
+    "Spells 101011": "Check Box 3081",
+    "Spells 101012": "Check Box 3082",
+    "Spells 101013": "Check Box 3083",
+}
+
+# "Known spells" casters - treat all known spells as prepared for MVP
+_KNOWN_SPELLS_CASTERS = ["sorcerer", "bard", "warlock", "ranger"]
 
 # Class → spellcasting ability key
 _CASTING_ABILITY = {
@@ -120,7 +279,7 @@ _SKILL_CHECKBOX = {
 _DEATH_SUCCESS_CB = ["Check Box 12", "Check Box 13", "Check Box 14"]
 _DEATH_FAILURE_CB = ["Check Box 15", "Check Box 16", "Check Box 17"]
 
-# Inspiration checkbox
+# Inspiration checkbox (not same as spell prepared checkbox!)
 _INSPIRATION_CB = "Check Box 251"
 
 
@@ -138,21 +297,32 @@ def _get_spellcasting_ability_mod(character):
     return ability_mod(score)
 
 
-def _partition_spells(spellcasting):
-    """Return {level_int: [name, ...]} with cantrips at key 0."""
+def _partition_spells(spellcasting, class_name):
+    """
+    Return {level_int: [{name, prepared}, ...]} with cantrips at key 0.
+    For known-spells casters, treat all spells as prepared.
+    """
     by_level = {i: [] for i in range(10)}
+    is_known_caster = class_name.lower() in _KNOWN_SPELLS_CASTERS
 
     for entry in spellcasting.get("cantrips_known", []):
         name = entry["name"] if isinstance(entry, dict) else entry
-        by_level[0].append(name)
+        by_level[0].append({"name": name, "prepared": False})  # cantrips have no prepared checkbox
 
     for sp in spellcasting.get("spells_known", []):
-        lvl = sp["level"]
+        lvl = sp.get("level", 0)
+        name = sp.get("name", "")
+        prepared = sp.get("prepared", False)
+        
+        # For known-spells casters, treat all known spells as prepared
+        if is_known_caster:
+            prepared = True
+        
         if lvl == 0:
-            if sp["name"] not in by_level[0]:
-                by_level[0].append(sp["name"])
+            if name not in [s["name"] for s in by_level[0]]:
+                by_level[0].append({"name": name, "prepared": False})
             continue
-        by_level[lvl].append(sp["name"])
+        by_level[lvl].append({"name": name, "prepared": prepared})
 
     return by_level
 
@@ -174,15 +344,47 @@ def _enforce_spell_limit(by_level, character):
             budget -= len(by_level[lv])
 
 
-def _build_spell_field_vals(by_level):
-    """Map spell names into the correct PDF section fields."""
+def _build_spell_field_vals(by_level, checkbox_vals):
+    """
+    Map spell names into the correct PDF section fields.
+    Also set prepared checkboxes for leveled spells.
+    """
     vals = {}
-    for level in range(10):
-        start, count = _SPELL_SECTION[level]
-        fields = _ALL_SPELL_FIELDS[start:start + count]
-        names = by_level.get(level, [])
+    
+    # Clear all spell fields first
+    for field in _CANTRIP_FIELDS:
+        vals[field] = ""
+    for level in range(1, 10):
+        for field in _SPELL_FIELDS_BY_LEVEL.get(level, []):
+            vals[field] = ""
+            if field in _SPELL_FIELD_TO_PREP_CHECKBOX:
+                checkbox_vals[_SPELL_FIELD_TO_PREP_CHECKBOX[field]] = False
+    
+    # Fill cantrip fields (no prepared checkboxes)
+    cantrips = by_level.get(0, [])
+    for i, field in enumerate(_CANTRIP_FIELDS):
+        if i < len(cantrips):
+            vals[field] = cantrips[i]["name"]
+        else:
+            vals[field] = ""
+    
+    # Fill leveled spell fields + prepared checkboxes
+    for level in range(1, 10):
+        fields = _SPELL_FIELDS_BY_LEVEL.get(level, [])
+        spells = by_level.get(level, [])
+        
         for i, field in enumerate(fields):
-            vals[field] = names[i] if i < len(names) else ""
+            if i < len(spells):
+                spell = spells[i]
+                vals[field] = spell["name"]
+                # Set prepared checkbox
+                if field in _SPELL_FIELD_TO_PREP_CHECKBOX:
+                    checkbox_vals[_SPELL_FIELD_TO_PREP_CHECKBOX[field]] = spell["prepared"]
+            else:
+                vals[field] = ""
+                if field in _SPELL_FIELD_TO_PREP_CHECKBOX:
+                    checkbox_vals[_SPELL_FIELD_TO_PREP_CHECKBOX[field]] = False
+    
     return vals
 
 
@@ -405,10 +607,24 @@ def build_all_vals(c):
     vals["FactionName"] = faction.get("name", "")
 
     # ------------------------------------------------------------------
+    # CHECKBOXES
+    # ------------------------------------------------------------------
+    cb = {}
+
+    # ------------------------------------------------------------------
     # SPELLCASTING  (page 3)
     # ------------------------------------------------------------------
     by_level_snapshot = {}
     spellcasting = c.get("spellcasting")
+
+    # Clear all spell fields and prepared checkboxes first
+    for field in _CANTRIP_FIELDS:
+        vals[field] = ""
+    for level in range(1, 10):
+        for field in _SPELL_FIELDS_BY_LEVEL.get(level, []):
+            vals[field] = ""
+            if field in _SPELL_FIELD_TO_PREP_CHECKBOX:
+                cb[_SPELL_FIELD_TO_PREP_CHECKBOX[field]] = False
 
     if spellcasting:
         vals["Spellcasting Class 2"]  = spellcasting.get("class", "")
@@ -429,21 +645,17 @@ def build_all_vals(c):
                 vals[f"SlotsRemaining {field_idx}"] = ""
 
         # Partition spells by level, enforce limit, map to fields
-        by_level = _partition_spells(spellcasting)
+        class_name = cls["name"]
+        by_level = _partition_spells(spellcasting, class_name)
         _enforce_spell_limit(by_level, c)
-        by_level_snapshot = {lv: list(names) for lv, names in by_level.items()}
-        vals.update(_build_spell_field_vals(by_level))
+        by_level_snapshot = {lv: [s["name"] for s in spells] for lv, spells in by_level.items()}
+        vals.update(_build_spell_field_vals(by_level, cb))
     else:
-        # For non-casters: blank all spell slots and fields
+        # For non-casters: blank all spell slots
         for lv_num in range(1, 10):
             field_idx = 18 + lv_num
             vals[f"SlotsTotal {field_idx}"]     = ""
             vals[f"SlotsRemaining {field_idx}"] = ""
-
-    # ------------------------------------------------------------------
-    # CHECKBOXES
-    # ------------------------------------------------------------------
-    cb = {}
 
     # Saving-throw proficiency
     for ab, cb_name in _ST_CHECKBOX.items():
@@ -494,8 +706,7 @@ def _validate(vals, out_path, by_level_snapshot):
     # Cantrips only in cantrip section
     cantrip_names = set(by_level_snapshot.get(0, []))
     for lvl in range(1, 10):
-        s, cnt = _SPELL_SECTION[lvl]
-        for field in _ALL_SPELL_FIELDS[s:s + cnt]:
+        for field in _SPELL_FIELDS_BY_LEVEL.get(lvl, []):
             v = vals.get(field, "")
             if v and v in cantrip_names:
                 errors.append(f"Cantrip '{v}' in level-{lvl} section ({field}).")
@@ -504,8 +715,7 @@ def _validate(vals, out_path, by_level_snapshot):
     levelled = set()
     for lvl in range(1, 10):
         levelled.update(by_level_snapshot.get(lvl, []))
-    cs, cc = _SPELL_SECTION[0]
-    for field in _ALL_SPELL_FIELDS[cs:cs + cc]:
+    for field in _CANTRIP_FIELDS:
         v = vals.get(field, "")
         if v and v in levelled:
             errors.append(f"Levelled spell '{v}' in cantrip section ({field}).")

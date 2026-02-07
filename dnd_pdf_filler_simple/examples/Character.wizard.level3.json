@@ -214,12 +214,12 @@
       {
         "name": "Sleep",
         "level": 1,
-        "prepared": false
+        "prepared": true
       },
       {
         "name": "Ray of Sickness",
         "level": 1,
-        "prepared": false
+        "prepared": true
       },
       {
         "name": "Scorching Ray",
