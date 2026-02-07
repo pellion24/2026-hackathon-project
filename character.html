@@ -18,15 +18,21 @@
     </header>
 
     <section class="grid-container">
-        <div class="offical-art">
-            <img src="static/images/lego_wizard_pintrest.jpg" width=50% height=85%>
+        <div class="offical-art card">
+            <img src="static/images/Barbarian%20DND.png">
         </div>
-        <div class="character-info">
-            <h2 class="unifrakturmaguntia-regular">Character name</h2>
-            <h3 class="unifrakturmaguntia-regular">class</h3>
-            <h3 class="unifrakturmaguntia-regular">race</h3>
+        <div class="character-info card">
+            <h2 class="unifrakturmaguntia-regular" id="character-name">Character name</h2>
+            <h3 class="unifrakturmaguntia-regular" >class</h3>
+            <ul>
+                <li id="class-name">class name goes here</li>
+            </ul>
+            <h3 class="unifrakturmaguntia-regular" >race</h3>
+            <ul>
+                <li id="race-name">race name goes here</li>
+            </ul>
         </div>
-        <div class="pdf-viewer">
+        <div class="pdf-viewer card">
             <h1 class="unifrakturmaguntia-regular">pdf-view</h1>
             <iframe src="dnd_pdf_filler_simple/assets/5E_CharacterSheet_Fillable.pdf" id="pdfViewer"></iframe>
             <script>
@@ -34,13 +40,21 @@
                 document.getElementById("pdfViewer").src = params.get("pdf");
             </script>
         </div>
-        <div class="class-description">
-            <h2 class="unifrakturmaguntia-regular">Class Description</h2>
+        <div class="class-description card">
+            <h2 class="unifrakturmaguntia-regular" >Class Description</h2>
+            <ul>
+                <li id="class-description">class description goes here</li>
+            </ul>
         </div>
-        <div class="Backstory">
-            <h2 class="unifrakturmaguntia-regular">Backstory</h2>
+        <div class="Backstory card">
+            <h2 class="unifrakturmaguntia-regular" id="backstory">Backstory</h2>
+            <ul>
+                <li id="backstory">backstory goes here</li>
+            </ul>
         </div>
     </section>
+
+    <script src="character_info.js"></script>
 </body>
 
 </html>
