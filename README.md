@@ -18,5 +18,8 @@
 </ul>
 <h1>Problems</h1>
 <ul>
-  <dl></dl>
+  <dl>Agent Issues: Hard to integrate the response from the agent with the front-end code. Also difficult to parse through the agent response to convert to JSON.</dl>
+  <dl>Working with PDF's: Field mapping with the pdf's provided some difficulty.</dl>
+  <dl>Merge Conflicts: When three different people are working all on different versions, when we try to push to main we had plenty of merge conflicts.</dl>
+  <dl>Aesthetic Front-end: It was difficult finding a theme for a fantasy and medieval themed website, however with some inspiration from older sites, we found a solid color palette.</dl>
 </ul>
