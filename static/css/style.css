@@ -153,6 +153,11 @@ section h2 {
             0 0 30px rgba(201, 162, 39, 0.3);
 }
 
+section p {
+    color: var(--ink-black);
+    font-family: "Times New Roman";
+}
+
 .offical-art img {
     display: flex;
     align-content: center;

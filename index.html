@@ -92,53 +92,68 @@
 
         function getClassDescription(class_name) {
             const input = class_name;
+            let classImg;
             let classDescription;
             //console.log(class_name);
             switch (input) {
                 case "Artificer":
                     classDescription = classDescriptions.artificer.displayText;
+                    classImg = "static/images/Artificer%DND.png";
                     break;
                 case "Barbarian":
                     classDescription = classDescriptions.barbarian.displayText;
+                    classImg = "static/images/Barbarian%DND.png";
                     break;
                 case "Bard":
                     classDescription = classDescriptions.bard.displayText;
+                    classImg = "static/images/Bard%DND.png";
                     break;
                 case "Cleric":
                     classDescription = classDescriptions.artificer.displayText;
+                    classImg = "static/images/Cleric%DND.png";
                     break;
                 case "Druid":
                     classDescription = classDescriptions.artificer.displayText;
+                    classImg = "static/images/Druid%DND.png";
                     break;
                 case "Fighter":
                     classDescription = classDescriptions.artificer.displayText;
+                    classImg = "static/images/Fighter%DND.png";
                     break;
                 case "Monk":
                     classDescription = classDescriptions.artificer.displayText;
+                    classImg = "static/images/Monk%DND.png";
                     break;
                 case "Paladin":
                     classDescription = classDescriptions.artificer.displayText;
+                    classImg = "static/images/Paladin%DND.png";
                     break;
                 case "Ranger":
                     classDescription = classDescriptions.artificer.displayText;
+                    classImg = "static/images/Ranger%DND.png";
                     break;
                 case "Rogue":
                     classDescription = classDescriptions.artificer.displayText;
+                    classImg = "static/images/Rogue%DND.png";
                     break;
                 case "Sorcerer":
                     classDescription = classDescriptions.artificer.displayText;
+                    classImg = "static/images/Sorcerer%DND.png";
                     break;
                 case "Warlock":
                     classDescription = classDescriptions.artificer.displayText;
+                    classImg = "static/images/Warlock%DND.png";
                     break;
                 case "Wizard":
                     classDescription = classDescriptions.artificer.displayText;
+                    classImg = "static/images/Wizard%DND.png";
                     break;
                 default:
                     classDescription = "Class lost to the wind. You must find your own class.";
+                    classImg = "nope";
 
             }
-            return classDescription;
+            return {"classDesc":classDescription, "imgClass":classImg};
         }
 
         function chooseMessage() {
@@ -191,11 +206,13 @@
                     //console.log(className);
 
                     document.getElementById("pdfViewer").src = data.pdf_url;
-                    document.getElementById("class-description").textContent = getClassDescription(className);
+                    document.getElementById("class-description").textContent = getClassDescription(className).classDesc;
                     document.getElementById("backstoryText").textContent = backstoryText;
                     document.getElementById("race-name").textContent = raceName;
                     document.getElementById("class-name").textContent = className;
                     document.getElementById("character-name").textContent = charName;
+                    const img = document.getElementById("class-img");
+                    img.src = getClassDescription(className).imgClass;
                     resultBox.textContent = "Done! PDF downloaded.";
                 }
                 else {
@@ -217,35 +234,27 @@
     </script>
 
     <section class="grid-container hidden">
-        <div class="offical-art card">
+        <div class="offical-art card" id="class-img">
             <img src="static/images/Barbarian%20DND.png">
         </div>
         <div class="character-info card">
             <h2 class="unifrakturmaguntia-regular" id="character-name">Character name</h2>
             <h3 class="unifrakturmaguntia-regular">class</h3>
-            <ul>
-                <li id="class-name">class name goes here</li>
-            </ul>
+            <p id="class-name">class name goes here</p>
             <h3 class="unifrakturmaguntia-regular">race</h3>
-            <ul>
-                <li id="race-name">race name goes here</li>
-            </ul>
+            <p id="race-name">race name goes here</p>
         </div>
         <div class="pdf-viewer card">
-            <h1 class="unifrakturmaguntia-regular">pdf-view</h1>
-            <iframe src="dnd_pdf_filler_simple/assets/5E_CharacterSheet_Fillable.pdf" id="pdfViewer"></iframe>
+            <h2 class="unifrakturmaguntia-regular">pdf-view</h2>
+            <iframe src="dnd_pdf_filler_simple/assets/5E_CharacterSheet_Fillable.pdf" id="pdfViewer" style="width: 95%; height: 500px;"></iframe>
         </div>
         <div class="class-description card">
             <h2 class="unifrakturmaguntia-regular">Class Description</h2>
-            <ul>
-                <li id="class-description">class description goes here</li>
-            </ul>
+            <p id="class-description">class description goes here</p>
         </div>
         <div class="Backstory card">
             <h2 class="unifrakturmaguntia-regular" id="backstory">Backstory</h2>
-            <ul>
-                <li id="backstoryText">backstory goes here</li>
-            </ul>
+            <p id="backstoryText">backstory goes here</p>
         </div>
     </section>
 
